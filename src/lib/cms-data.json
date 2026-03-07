@@ -1,0 +1,520 @@
+{
+  "tours": [
+    {
+      "id": "tour-1",
+      "slug": "majestic-japan-sakura-escape",
+      "title": {
+        "id": "Majestic Japan Sakura Escape",
+        "en": "Majestic Japan Sakura Escape"
+      },
+      "destination": {
+        "id": "Tokyo · Fuji · Kyoto",
+        "en": "Tokyo · Fuji · Kyoto"
+      },
+      "duration": "7D6N",
+      "price": "IDR 18.900.000",
+      "rating": "4.9/5",
+      "category": {
+        "id": "Favorit Keluarga",
+        "en": "Family Favorite"
+      },
+      "summary": {
+        "id": "Perjalanan elegan menikmati sakura, city highlights, dan pengalaman budaya Jepang yang dirancang premium.",
+        "en": "An elegant sakura journey with iconic city highlights and curated premium cultural experiences."
+      },
+      "highlights": {
+        "id": [
+          "Hotel bintang 4 pilihan",
+          "Rute favorit musim semi",
+          "Cocok untuk first timer ke Jepang"
+        ],
+        "en": [
+          "Handpicked 4-star stays",
+          "Prime spring itinerary",
+          "Ideal for first-time Japan travelers"
+        ]
+      },
+      "image": "/uploads/majestic-japan-sakura-escape-1772828893264.jpg",
+      "featured": true,
+      "createdAt": "2026-03-06T03:24:05.603Z",
+      "updatedAt": "2026-03-06T20:28:13.273Z"
+    },
+    {
+      "id": "tour-2",
+      "slug": "scenic-europe-grand-royale",
+      "title": {
+        "id": "Scenic Europe Grand Royale",
+        "en": "Scenic Europe Grand Royale"
+      },
+      "destination": {
+        "id": "Paris · Lucerne · Milan",
+        "en": "Paris · Lucerne · Milan"
+      },
+      "duration": "10D8N",
+      "price": "IDR 35.500.000",
+      "rating": "4.8/5",
+      "category": {
+        "id": "Best Seller Eropa",
+        "en": "Europe Best Seller"
+      },
+      "summary": {
+        "id": "Rangkaian kota klasik Eropa dengan ritme perjalanan nyaman dan visual destinasi yang ikonik.",
+        "en": "A classic European route with comfortable pacing and access to iconic, photogenic destinations."
+      },
+      "highlights": {
+        "id": [
+          "Kombinasi kota romantis dan panorama alpine",
+          "Ideal untuk honeymoon dan private group",
+          "Pendampingan itinerary yang rapi"
+        ],
+        "en": [
+          "Romantic cities and alpine panoramas",
+          "Ideal for honeymoon and private groups",
+          "Well-paced itinerary support"
+        ]
+      },
+      "image": "/uploads/default-tour.jpg",
+      "featured": true,
+      "createdAt": "2026-03-06T03:24:05.603Z",
+      "updatedAt": "2026-03-06T03:24:05.603Z",
+      "gallery": [
+        "/uploads/default-tour.jpg"
+      ]
+    },
+    {
+      "id": "tour-3",
+      "slug": "korea-signature-luxury-trail",
+      "title": {
+        "id": "Korea Signature Luxury Trail",
+        "en": "Korea Signature Luxury Trail"
+      },
+      "destination": {
+        "id": "Seoul · Nami · Busan",
+        "en": "Seoul · Nami · Busan"
+      },
+      "duration": "6D4N",
+      "price": "IDR 16.750.000",
+      "rating": "4.8/5",
+      "category": {
+        "id": "Paket Premium Korea",
+        "en": "Premium Korea Package"
+      },
+      "summary": {
+        "id": "Kombinasi city lifestyle, spot hits, dan pengalaman premium yang cocok untuk pasangan maupun grup kecil.",
+        "en": "A refined mix of city lifestyle, iconic attractions, and premium moments for couples or small groups."
+      },
+      "highlights": {
+        "id": [
+          "Destinasi populer dan mudah dijual",
+          "Visual itinerary kuat untuk promosi",
+          "Harga kompetitif dengan nuansa premium"
+        ],
+        "en": [
+          "Popular destinations with strong demand",
+          "Highly marketable visual itinerary",
+          "Competitive pricing with premium appeal"
+        ]
+      },
+      "image": "/uploads/default-tour.jpg",
+      "featured": true,
+      "createdAt": "2026-03-06T03:24:05.603Z",
+      "updatedAt": "2026-03-06T03:24:05.603Z",
+      "gallery": [
+        "/uploads/default-tour.jpg"
+      ]
+    },
+    {
+      "id": "tour-4",
+      "slug": "australia-elegant-coastal-getaway",
+      "title": {
+        "id": "Australia Elegant Coastal Getaway",
+        "en": "Australia Elegant Coastal Getaway"
+      },
+      "destination": {
+        "id": "Sydney · Melbourne",
+        "en": "Sydney · Melbourne"
+      },
+      "duration": "7D5N",
+      "price": "IDR 24.400.000",
+      "rating": "4.7/5",
+      "category": {
+        "id": "Urban Escape",
+        "en": "Urban Escape"
+      },
+      "summary": {
+        "id": "Paket santai dengan cityscape modern, culinary stop, dan pengalaman pesisir yang berkelas.",
+        "en": "A polished city-and-coast experience with culinary moments and premium urban comfort."
+      },
+      "highlights": {
+        "id": [
+          "Cocok untuk keluarga dan corporate reward",
+          "Pacing santai dan fleksibel",
+          "Look and feel modern premium"
+        ],
+        "en": [
+          "Great for families and corporate rewards",
+          "Relaxed and flexible pacing",
+          "Modern premium look and feel"
+        ]
+      },
+      "image": "/uploads/default-tour.jpg",
+      "featured": false,
+      "createdAt": "2026-03-06T03:24:05.603Z",
+      "updatedAt": "2026-03-06T03:24:05.603Z",
+      "gallery": [
+        "/uploads/default-tour.jpg"
+      ]
+    }
+  ],
+  "blogs": [
+    {
+      "id": "blog-1",
+      "slug": "tips-memilih-paket-tour-premium",
+      "title": {
+        "id": "Tips Memilih Paket Tour Premium yang Nyaman dan Bernilai",
+        "en": "How to Choose a Premium Tour Package That Feels Worth It"
+      },
+      "category": {
+        "id": "Tips Travel",
+        "en": "Travel Tips"
+      },
+      "excerpt": {
+        "id": "Panduan singkat untuk memahami value paket tour premium, mulai dari itinerary, hotel, hingga layanan after-sales.",
+        "en": "A concise guide to evaluating premium tour value, from itinerary pacing to hotel quality and after-sales service."
+      },
+      "content": {
+        "id": [
+          "Paket premium bukan hanya soal harga, tetapi juga soal rasa nyaman, ritme perjalanan, dan kualitas pengalaman secara keseluruhan.",
+          "Perhatikan komposisi itinerary, kualitas hotel, transparansi biaya, dan apakah agen travel memberikan support yang responsif.",
+          "Dengan presentasi produk yang kuat, pelanggan biasanya lebih mudah memahami mengapa sebuah paket layak dipilih."
+        ],
+        "en": [
+          "A premium package is not only about price, but about comfort, pacing, and the overall quality of the experience.",
+          "Look closely at itinerary composition, hotel quality, price transparency, and whether the agency offers responsive support.",
+          "Strong product presentation helps travelers understand why a package deserves their trust."
+        ]
+      },
+      "date": "06 Mar 2026",
+      "readTime": "5 min read",
+      "image": "/uploads/default-blog.jpg",
+      "featured": true,
+      "createdAt": "2026-03-06T03:24:05.604Z",
+      "updatedAt": "2026-03-06T03:24:05.604Z"
+    },
+    {
+      "id": "blog-2",
+      "slug": "destinasi-favorit-untuk-liburan-keluarga",
+      "title": {
+        "id": "Destinasi Favorit untuk Liburan Keluarga yang Praktis dan Menarik",
+        "en": "Favorite Destinations for Practical Yet Memorable Family Holidays"
+      },
+      "category": {
+        "id": "Inspirasi Destinasi",
+        "en": "Destination Inspiration"
+      },
+      "excerpt": {
+        "id": "Mulai dari Jepang hingga Australia, beberapa destinasi selalu menjadi pilihan aman untuk perjalanan keluarga modern.",
+        "en": "From Japan to Australia, some destinations consistently stand out for modern family travel."
+      },
+      "content": {
+        "id": [
+          "Keluarga biasanya mencari kombinasi kenyamanan, keamanan, dan itinerary yang tidak terlalu padat.",
+          "Destinasi seperti Jepang, Korea, dan Australia memberi keseimbangan antara atraksi, fasilitas, dan kemudahan mobilitas.",
+          "Pemilihan paket yang tepat akan sangat membantu pengalaman perjalanan menjadi lebih tenang dan berkesan."
+        ],
+        "en": [
+          "Families usually look for comfort, safety, and itineraries that are engaging without being exhausting.",
+          "Destinations like Japan, Korea, and Australia strike a strong balance between attractions, infrastructure, and ease of movement.",
+          "Choosing the right package can make the whole travel experience significantly smoother and more memorable."
+        ]
+      },
+      "date": "04 Mar 2026",
+      "readTime": "4 min read",
+      "image": "/uploads/default-blog.jpg",
+      "featured": false,
+      "createdAt": "2026-03-06T03:24:05.604Z",
+      "updatedAt": "2026-03-06T03:24:05.604Z"
+    },
+    {
+      "id": "blog-3",
+      "slug": "cara-membangun-itinerary-yang-jualan",
+      "title": {
+        "id": "Cara Membangun Itinerary yang Lebih Menjual untuk Calon Traveler",
+        "en": "How to Build a Travel Itinerary That Converts Better"
+      },
+      "category": {
+        "id": "Marketing Travel",
+        "en": "Travel Marketing"
+      },
+      "excerpt": {
+        "id": "Presentasi itinerary yang rapi dan visual yang kuat dapat meningkatkan minat inquiry secara signifikan.",
+        "en": "Clean itinerary structure and strong visuals can significantly improve inquiry conversion."
+      },
+      "content": {
+        "id": [
+          "Traveler modern ingin melihat value dengan cepat: destinasi, durasi, kenyamanan, dan keunggulan paket.",
+          "Gunakan struktur yang jelas, headline yang meyakinkan, dan deskripsi singkat yang mudah dipindai.",
+          "Website travel yang mewah dan rapi membantu brand terlihat lebih profesional dan lebih dipercaya."
+        ],
+        "en": [
+          "Modern travelers want to assess value quickly: destination, duration, comfort, and package advantages.",
+          "Use clear structure, convincing headlines, and concise descriptions that are easy to scan.",
+          "A refined travel website instantly makes the brand appear more professional and trustworthy."
+        ]
+      },
+      "date": "01 Mar 2026",
+      "readTime": "6 min read",
+      "image": "/uploads/default-blog.jpg",
+      "featured": false,
+      "createdAt": "2026-03-06T03:24:05.604Z",
+      "updatedAt": "2026-03-06T03:24:05.604Z"
+    }
+  ],
+  "inquiries": [],
+  "homepage": {
+    "whySection": {
+      "eyebrow": {
+        "id": "WHY TRAVELERS RETURN",
+        "en": "WHY TRAVELERS RETURN"
+      },
+      "title": {
+        "id": "Layanan premium yang terasa personal",
+        "en": "A premium service that feels personal"
+      },
+      "description": {
+        "id": "Dari kurasi destinasi hingga bantuan bergaya concierge, kami merancang perjalanan yang terasa mulus, elevated, dan berkesan.",
+        "en": "From destination curation to concierge-style support, we design travel that feels seamless, elevated, and memorable."
+      },
+      "points": {
+        "id": [
+          "Rekomendasi paket yang disesuaikan dengan profil traveler",
+          "Support quotation cepat untuk private trip dan grup corporate",
+          "Presentasi modern dengan persepsi nilai premium"
+        ],
+        "en": [
+          "Tailored package recommendations based on traveler profile",
+          "Fast quotation support for private and corporate groups",
+          "Modern presentation with premium value perception"
+        ]
+      }
+    },
+    "topDestinations": [
+      {
+        "name": {
+          "id": "Japan",
+          "en": "Japan"
+        },
+        "label": {
+          "id": "18 curated journeys",
+          "en": "18 curated journeys"
+        },
+        "query": "Japan",
+        "customLink": ""
+      },
+      {
+        "name": {
+          "id": "South Korea",
+          "en": "South Korea"
+        },
+        "label": {
+          "id": "12 premium itineraries",
+          "en": "12 premium itineraries"
+        },
+        "query": "South Korea",
+        "customLink": ""
+      },
+      {
+        "name": {
+          "id": "Europe",
+          "en": "Europe"
+        },
+        "label": {
+          "id": "24 iconic routes",
+          "en": "24 iconic routes"
+        },
+        "query": "Europe",
+        "customLink": ""
+      },
+      {
+        "name": {
+          "id": "Australia",
+          "en": "Australia"
+        },
+        "label": {
+          "id": "8 elegant getaways",
+          "en": "8 elegant getaways"
+        },
+        "query": "Australia",
+        "customLink": ""
+      }
+    ],
+    "faqItems": [
+      {
+        "id": "visa",
+        "question": {
+          "id": "Apakah Buana Tour & Travel membantu urusan visa?",
+          "en": "Does Buana Tour & Travel assist with visa arrangements?"
+        },
+        "answer": {
+          "id": "Ya, untuk destinasi tertentu tim kami bisa membantu memberi arahan dokumen, jadwal pengurusan, dan kebutuhan administrasi visa. Detail dukungan akan menyesuaikan tujuan dan paket perjalanan.",
+          "en": "Yes, for selected destinations our team can assist with document guidance, visa processing timeline, and administrative requirements. The exact support depends on your destination and travel package."
+        },
+        "keywords": [
+          "visa",
+          "dokumen",
+          "passport",
+          "paspor"
+        ]
+      },
+      {
+        "id": "payment",
+        "question": {
+          "id": "Bagaimana sistem pembayaran paket tour?",
+          "en": "How does tour package payment work?"
+        },
+        "answer": {
+          "id": "Pembayaran biasanya dilakukan melalui skema tanda jadi dan pelunasan sebelum keberangkatan. Nominal dan tenggat pembayaran mengikuti paket, maskapai, serta kebijakan vendor terkait.",
+          "en": "Payments usually follow a booking deposit and final settlement before departure. The exact amount and due dates depend on the package, airline, and related vendor policies."
+        },
+        "keywords": [
+          "bayar",
+          "pembayaran",
+          "payment",
+          "dp",
+          "deposit",
+          "pelunasan"
+        ]
+      },
+      {
+        "id": "schedule",
+        "question": {
+          "id": "Apakah jadwal keberangkatan bisa berubah?",
+          "en": "Can departure schedules change?"
+        },
+        "answer": {
+          "id": "Jadwal dapat menyesuaikan ketersediaan seat, kondisi operasional maskapai, cuaca, atau kebutuhan teknis lain. Jika ada perubahan, tim kami akan menginformasikan secepat mungkin beserta opsi terbaiknya.",
+          "en": "Schedules may change based on seat availability, airline operations, weather, or other technical considerations. If anything changes, our team will inform you as soon as possible together with the best available options."
+        },
+        "keywords": [
+          "jadwal",
+          "schedule",
+          "keberangkatan",
+          "reschedule",
+          "ubah tanggal"
+        ]
+      },
+      {
+        "id": "refund",
+        "question": {
+          "id": "Bagaimana kebijakan refund atau reschedule?",
+          "en": "What is the refund or reschedule policy?"
+        },
+        "answer": {
+          "id": "Kebijakan refund dan reschedule mengikuti jenis paket, status booking, tiket, hotel, dan kebijakan vendor yang sudah diproses. Karena itu, setiap kasus perlu dicek dulu oleh admin agar informasinya akurat.",
+          "en": "Refund and reschedule policies depend on the package type, booking status, flight tickets, hotel reservations, and processed vendor terms. Each case needs to be reviewed by admin first so the answer stays accurate."
+        },
+        "keywords": [
+          "refund",
+          "reschedule",
+          "cancel",
+          "pembatalan",
+          "ganti jadwal"
+        ]
+      },
+      {
+        "id": "inquiry",
+        "question": {
+          "id": "Bagaimana cara inquiry paket yang cocok?",
+          "en": "How can I inquire about the right package?"
+        },
+        "answer": {
+          "id": "Kamu bisa isi form inquiry di halaman kontak atau detail tour, lalu sistem akan langsung mengarahkan ke WhatsApp admin agar follow up lebih cepat dan lebih personal.",
+          "en": "You can fill in the inquiry form on the contact page or on a tour detail page, and the system will immediately direct you to admin WhatsApp for faster and more personal follow-up."
+        },
+        "keywords": [
+          "inquiry",
+          "konsultasi",
+          "booking",
+          "pesan",
+          "hubungi admin"
+        ]
+      }
+    ],
+    "socialProofImages": [
+      {
+        "id": "social-proof-1",
+        "image": "/uploads/default-tour.jpg",
+        "alt": {
+          "id": "Traveler menikmati perjalanan premium bersama Buana Tour & Travel",
+          "en": "Travelers enjoying a premium trip with Buana Tour & Travel"
+        }
+      },
+      {
+        "id": "social-proof-2",
+        "image": "/uploads/default-blog.jpg",
+        "alt": {
+          "id": "Momen group tour di destinasi ikonik",
+          "en": "A group tour moment at an iconic destination"
+        }
+      },
+      {
+        "id": "social-proof-3",
+        "image": "/uploads/default-tour.jpg",
+        "alt": {
+          "id": "Liburan keluarga dengan pengalaman yang nyaman",
+          "en": "A comfortable family holiday experience"
+        }
+      }
+    ],
+    "documentationItems": [
+      {
+        "id": "documentation-1",
+        "image": "/uploads/documentation-1-1772829504727.jpg",
+        "title": {
+          "id": "Keberangkatan group favorit Jepang",
+          "en": "Favorite Japan group departure"
+        },
+        "label": {
+          "id": "Dokumentasi traveler bersama tim",
+          "en": "Traveler documentation with the team"
+        }
+      },
+      {
+        "id": "documentation-2",
+        "image": "/uploads/documentation-2-1772829906430.webp",
+        "title": {
+          "id": "Momen itinerary premium di destinasi unggulan",
+          "en": "Premium itinerary moments in featured destinations"
+        },
+        "label": {
+          "id": "Visual perjalanan untuk social proof",
+          "en": "Travel visuals for social proof"
+        }
+      },
+      {
+        "id": "documentation-3",
+        "image": "/uploads/documentation-3-1772830022959.webp",
+        "title": {
+          "id": "Pengalaman liburan yang terasa nyata",
+          "en": "Travel experiences that feel real"
+        },
+        "label": {
+          "id": "Cocok untuk honeymoon, family, dan corporate",
+          "en": "Suitable for honeymoon, family, and corporate trips"
+        }
+      },
+      {
+        "id": "documentation-4",
+        "image": "/uploads/documentation-4-1772830022958.jpg",
+        "title": {
+          "id": "Dokumentasi momen sebelum pulang",
+          "en": "Captured moments before heading home"
+        },
+        "label": {
+          "id": "Membantu homepage terasa lebih hidup",
+          "en": "Helps the homepage feel more alive"
+        }
+      }
+    ]
+  }
+}

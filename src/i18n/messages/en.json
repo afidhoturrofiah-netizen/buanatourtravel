@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login"
+  },
+  "home": {
+    "heroTitle": "Plan your best holiday",
+    "heroSubtitle": "Browse tours, promos, and destination inspiration.",
+    "searchPlaceholder": "Search destination / country",
+    "searchButton": "Search",
+    "popularTitle": "Popular Destinations",
+    "promoTitle": "Featured Promos"
+  },
+  "footer": {
+    "tagline": "Dream holidays, made real with us.",
+    "copyright": "All rights reserved."
+  }
+}

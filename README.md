@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Buana Tour & Travel
 
-## Getting Started
+Website travel bilingual berbasis Next.js dengan halaman publik premium dan CMS admin sederhana untuk mengelola:
 
-First, run the development server:
+- paket tour
+- artikel blog
+- upload gambar
+- inquiry dari halaman publik
+
+## Menjalankan project
+
+Gunakan folder project ini:
 
 ```bash
+cd web-goldenrama-clone
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project akan berjalan di:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Environment variables
 
-## Learn More
+Salin `.env.example` menjadi `.env.local`, lalu isi minimal:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+ADMIN_EMAIL=admin@buanatravel.com
+ADMIN_PASSWORD=admin123
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Login admin
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Route admin:
 
-## Deploy on Vercel
+```bash
+/id/admin/login
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Setelah login kamu bisa akses:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/id/admin`
+- `/id/admin/tours`
+- `/id/admin/blog`
+- `/id/admin/inquiries`
+
+## Cara kerja CMS lokal
+
+- data disimpan di `src/lib/cms-data.json`
+- upload gambar disimpan di `public/uploads`
+- session admin menggunakan cookie httpOnly
+
+## Catatan penting
+
+- CMS ini cocok untuk MVP/local development
+- semua data CMS saat ini tersimpan lokal di project

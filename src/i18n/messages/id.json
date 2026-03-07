@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "tours": "Paket Tour",
+    "blog": "Blog",
+    "about": "Tentang",
+    "contact": "Kontak",
+    "login": "Login"
+  },
+  "home": {
+    "heroTitle": "Rencanakan liburan terbaikmu",
+    "heroSubtitle": "Pilih paket tour, promo, dan inspirasi destinasi.",
+    "searchPlaceholder": "Cari destinasi / negara",
+    "searchButton": "Cari",
+    "popularTitle": "Destinasi Populer",
+    "promoTitle": "Promo Pilihan"
+  },
+  "footer": {
+    "tagline": "Liburan impian, nyata bersama kami.",
+    "copyright": "Hak cipta dilindungi."
+  }
+}
