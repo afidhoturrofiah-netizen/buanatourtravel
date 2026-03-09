@@ -219,20 +219,20 @@ export default async function HomePage({
             {featuredTours.map((tour, index) => (
               <ScrollReveal key={tour.title} direction="up" delay={200 + index * 100}>
                 <div
-                  className="luxury-card luxury-border group relative overflow-hidden p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(15,23,42,0.12)] hover:border-amber-200/60"
+                  className="luxury-card luxury-border group relative flex h-full flex-col overflow-hidden p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(15,23,42,0.12)] hover:border-amber-200/60"
                 >
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-amber-300 via-yellow-500 to-amber-200" />
                   <div className="inline-flex rounded-full bg-amber-50 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.25em] text-amber-700">
                     Promo {index + 1}
                   </div>
-                  <div className="mt-5 text-lg font-semibold tracking-[-0.03em] text-zinc-950">{tour.title}</div>
-                  <div className="mt-3 text-sm text-zinc-500">{tour.region}</div>
-                  <div className="mt-6 flex items-center justify-between text-sm">
+                  <div className="mt-5 line-clamp-2 text-lg font-semibold tracking-[-0.03em] text-zinc-950">{tour.title}</div>
+                  <div className="mt-3 line-clamp-1 text-sm text-zinc-500">{tour.region}</div>
+                  <div className="mt-auto flex items-center justify-between pt-6 text-sm">
                     <span className="rounded-full bg-zinc-950 px-3 py-1.5 text-white">{tour.days}</span>
                     <span className="font-semibold text-amber-700">{tour.price}</span>
                   </div>
                   <Link
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-zinc-900 transition-all duration-300 group-hover:text-amber-700 group-hover:translate-x-1"
+                    className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-zinc-900 transition-all duration-300 group-hover:text-amber-700 group-hover:translate-x-1"
                     href={`/${resolvedLocale}/tours/${tour.slug}`}
                   >
                     View package
