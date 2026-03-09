@@ -1,9 +1,13 @@
-import { head, put } from "@vercel/blob";
+import { list, put } from "@vercel/blob";
 
 import { blogs, tours } from "@/data/site-content";
 import type { BlogRecord, CmsData, HomepageSettings, InquiryRecord, TourRecord } from "@/lib/cms-types";
 
 const CMS_BLOB_PATH = "cms/cms-data.json";
+
+// In-memory cache of the latest blob URL returned by put(), so we always
+// read freshly-written data even if the CDN edge cache is stale.
+let latestBlobUrl: string | null = null;
 
 function nowIso() {
   return new Date().toISOString();
@@ -223,19 +227,23 @@ function buildSeedData(): CmsData {
   };
 }
 
-async function blobExists(): Promise<boolean> {
+async function resolveBlobUrl(): Promise<string | null> {
+  if (latestBlobUrl) return latestBlobUrl;
   try {
-    const info = await head(CMS_BLOB_PATH);
-    return !!info;
+    const { blobs } = await list({ prefix: CMS_BLOB_PATH, limit: 1 });
+    if (blobs.length > 0) return blobs[0].url;
+    return null;
   } catch {
-    return false;
+    return null;
   }
 }
 
 async function readBlobJson(): Promise<CmsData | null> {
   try {
-    const info = await head(CMS_BLOB_PATH);
-    const response = await fetch(info.url, { cache: "no-store" });
+    const url = await resolveBlobUrl();
+    if (!url) return null;
+    const bustCache = `${url.includes("?") ? "&" : "?"}t=${Date.now()}`;
+    const response = await fetch(`${url}${bustCache}`, { cache: "no-store" });
     if (!response.ok) return null;
     return (await response.json()) as CmsData;
   } catch {
@@ -244,14 +252,6 @@ async function readBlobJson(): Promise<CmsData | null> {
 }
 
 export async function readCmsData(): Promise<CmsData> {
-  const exists = await blobExists();
-
-  if (!exists) {
-    const seed = buildSeedData();
-    await writeCmsData(seed);
-    return seed;
-  }
-
   const parsed = await readBlobJson();
 
   if (!parsed) {
@@ -308,12 +308,13 @@ export async function readCmsData(): Promise<CmsData> {
 }
 
 export async function writeCmsData(data: CmsData) {
-  await put(CMS_BLOB_PATH, JSON.stringify(data, null, 2), {
+  const blob = await put(CMS_BLOB_PATH, JSON.stringify(data, null, 2), {
     access: "public",
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
   });
+  latestBlobUrl = blob.url;
 }
 
 export async function getTours() {
