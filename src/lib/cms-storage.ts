@@ -311,6 +311,7 @@ export async function writeCmsData(data: CmsData) {
   await put(CMS_BLOB_PATH, JSON.stringify(data, null, 2), {
     access: "public",
     addRandomSuffix: false,
+    allowOverwrite: true,
     contentType: "application/json",
   });
 }

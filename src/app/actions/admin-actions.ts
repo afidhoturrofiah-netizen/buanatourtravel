@@ -52,6 +52,7 @@ async function saveUpload(file: File | null, prefix: string) {
   const blob = await put(filename, file, {
     access: "public",
     addRandomSuffix: false,
+    allowOverwrite: true,
   });
 
   return blob.url;
