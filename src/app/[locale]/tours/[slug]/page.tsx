@@ -6,6 +6,8 @@ import PageHero from "@/components/shared/PageHero";
 import InquiryForm from "@/components/shared/InquiryForm";
 import { getTourBySlug } from "@/lib/cms-storage";
 
+export const dynamic = "force-dynamic";
+
 export default async function TourDetailPage({
   params,
 }: {

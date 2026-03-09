@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import TourForm from "@/components/admin/TourForm";
 import { getTours } from "@/lib/cms-storage";
 
+export const dynamic = "force-dynamic";
+
 export default async function EditTourPage({
   params,
 }: {

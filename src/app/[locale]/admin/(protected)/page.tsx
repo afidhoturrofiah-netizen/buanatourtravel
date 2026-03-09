@@ -2,6 +2,8 @@ import { Map, MessageSquare, Newspaper, Star } from "lucide-react";
 
 import { getBlogs, getInquiries, getTours } from "@/lib/cms-storage";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboardPage() {
   const [tours, blogs, inquiries] = await Promise.all([getTours(), getBlogs(), getInquiries()]);
 

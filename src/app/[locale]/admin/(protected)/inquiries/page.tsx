@@ -3,6 +3,8 @@ import AdminActionButton from "@/components/admin/AdminActionButton";
 import AdminStatusNotice from "@/components/admin/AdminStatusNotice";
 import { getInquiries } from "@/lib/cms-storage";
 
+export const dynamic = "force-dynamic";
+
 const inquiryDateFormatter = new Intl.DateTimeFormat("id-ID", {
   dateStyle: "medium",
   timeStyle: "short",

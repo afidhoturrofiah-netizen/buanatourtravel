@@ -2,6 +2,8 @@ import HomepageSettingsForm from "@/components/admin/HomepageSettingsForm";
 import AdminStatusNotice from "@/components/admin/AdminStatusNotice";
 import { getHomepageSettings } from "@/lib/cms-storage";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminHomepageSettingsPage({
   params,
   searchParams,

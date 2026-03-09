@@ -7,6 +7,8 @@ import PageHero from "@/components/shared/PageHero";
 import { getTours } from "@/lib/cms-storage";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
+export const dynamic = "force-dynamic";
+
 function parsePriceToNumber(price: string) {
   const numeric = Number(price.replace(/[^\d]/g, ""));
   return Number.isNaN(numeric) ? 0 : numeric;

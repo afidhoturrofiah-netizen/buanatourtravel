@@ -7,6 +7,8 @@ import PageHero from "@/components/shared/PageHero";
 import { getBlogs } from "@/lib/cms-storage";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogPage({
   params,
 }: {

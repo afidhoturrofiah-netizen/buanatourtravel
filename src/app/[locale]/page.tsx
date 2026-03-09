@@ -8,6 +8,8 @@ import { defaultLocale, type Locale } from "@/i18n/routing";
 import { getHomepageSettings, getTours } from "@/lib/cms-storage";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage({
   params,
 }: {

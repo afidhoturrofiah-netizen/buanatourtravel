@@ -5,6 +5,8 @@ import { BookOpenText, CalendarDays, Tag } from "lucide-react";
 import PageHero from "@/components/shared/PageHero";
 import { getBlogBySlug } from "@/lib/cms-storage";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogDetailPage({
   params,
 }: {

@@ -5,6 +5,8 @@ import AdminActionButton from "@/components/admin/AdminActionButton";
 import AdminStatusNotice from "@/components/admin/AdminStatusNotice";
 import { getBlogs } from "@/lib/cms-storage";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminBlogPage({
   params,
   searchParams,
