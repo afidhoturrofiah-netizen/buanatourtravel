@@ -1,7 +1,7 @@
-import Image from "next/image";
 import type { BlogRecord } from "@/lib/cms-types";
 import { saveBlogAction } from "@/app/actions/admin-actions";
 import AdminActionButton from "@/components/admin/AdminActionButton";
+import ImageCropUpload from "@/components/admin/ImageCropUpload";
 
 export default function BlogForm({
   locale,
@@ -32,19 +32,7 @@ export default function BlogForm({
       <Textarea label="Konten ID (satu paragraf per baris)" name="content_id" defaultValue={initialData?.content.id.join("\n")} rows={6} />
       <Textarea label="Konten EN (satu paragraf per baris)" name="content_en" defaultValue={initialData?.content.en.join("\n")} rows={6} />
 
-      <div>
-        <label className="mb-2 block text-sm font-medium text-zinc-800" htmlFor="image">Upload gambar</label>
-        <input id="image" name="image" type="file" accept="image/*" className="block w-full rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm" />
-        <div className="mt-2 text-xs text-zinc-500">Gambar akan tampil auto-crop agar rasio kartu tetap rapi.</div>
-        {initialData?.image ? (
-          <div className="mt-4 max-w-sm overflow-hidden rounded-[24px] border border-zinc-200 bg-zinc-50 p-2">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[18px] bg-zinc-100">
-              <Image src={initialData.image} alt={initialData.title.id} fill className="object-cover" />
-            </div>
-            <div className="mt-2 text-xs text-zinc-500">Gambar saat ini: {initialData.image}</div>
-          </div>
-        ) : null}
-      </div>
+      <ImageCropUpload name="image" existingImage={initialData?.image} aspect={4 / 3} label="Upload gambar artikel" />
 
       <label className="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm text-zinc-700">
         <input type="checkbox" name="featured" defaultChecked={initialData?.featured} />

@@ -5,6 +5,7 @@ import { Trash2 } from "lucide-react";
 
 import { saveHomepageDocumentationAction } from "@/app/actions/admin-actions";
 import AdminActionButton from "@/components/admin/AdminActionButton";
+import ImageCropUpload from "@/components/admin/ImageCropUpload";
 import type { HomepageDocumentationItem } from "@/lib/cms-types";
 
 function createEmptyDocumentationItem(sequence: number): HomepageDocumentationItem {
@@ -64,16 +65,13 @@ export default function DocumentationSettingsForm({
               <div className="mt-4 grid gap-4 md:grid-cols-2">
                 <Field label="ID Item" name={`documentation_${index + 1}_id`} defaultValue={item.id} />
                 <div>
-                  <label className="mb-2 block text-sm font-medium text-zinc-800" htmlFor={`documentation_${index + 1}_image_file`}>Upload gambar</label>
-                  <input
-                    id={`documentation_${index + 1}_image_file`}
+                  <ImageCropUpload
                     name={`documentation_${index + 1}_image_file`}
-                    type="file"
-                    accept="image/*"
-                    className="w-full rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm outline-none transition file:mr-4 file:rounded-xl file:border-0 file:bg-amber-50 file:px-3 file:py-2 file:text-sm file:font-medium file:text-amber-800 focus:border-amber-400"
+                    existingImage={item.image}
+                    aspect={4 / 3}
+                    label="Upload gambar"
                   />
                   <input type="hidden" name={`documentation_${index + 1}_existing_image`} value={item.image} />
-                  <div className="mt-2 text-xs text-zinc-500">{item.image ? `Gambar saat ini: ${item.image}` : "Belum ada gambar dipilih."}</div>
                 </div>
                 <Field label="Judul ID" name={`documentation_${index + 1}_title_id`} defaultValue={item.title.id} />
                 <Field label="Judul EN" name={`documentation_${index + 1}_title_en`} defaultValue={item.title.en} />
