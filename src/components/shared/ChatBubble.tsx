@@ -99,99 +99,104 @@ export default function ChatBubble({ locale, faqItems }: { locale: Locale; faqIt
   }
 
   return (
-    <div className="fixed bottom-[5.5rem] right-3 z-[60] flex items-end justify-end sm:right-4 md:bottom-6 md:right-6">
+    <>
       {isOpen ? (
-        <div className="w-[calc(100vw-2rem)] max-w-sm overflow-hidden rounded-[28px] border border-white/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.18)] backdrop-blur-xl">
-          <div className="bg-[linear-gradient(135deg,#111827_0%,#172554_48%,#6b4f12_100%)] px-4 py-4 text-white">
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.28em] text-amber-300/80">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  AI Assistant
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-[60] bg-zinc-950/25 backdrop-blur-[2px] md:hidden"
+            aria-label="Close chat overlay"
+            onClick={() => setIsOpen(false)}
+          />
+          <div className="fixed inset-x-3 bottom-[4.5rem] z-[61] mx-auto max-w-sm overflow-hidden rounded-[24px] border border-white/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.18)] backdrop-blur-xl sm:inset-x-auto sm:right-4 sm:bottom-20 md:right-6 md:bottom-6">
+            <div className="bg-[linear-gradient(135deg,#111827_0%,#172554_48%,#6b4f12_100%)] px-4 py-3.5 text-white">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2.5">
+                  <Sparkles className="h-4 w-4 text-amber-300" />
+                  <span className="text-sm font-semibold tracking-[-0.02em]">
+                    {locale === "id" ? "Butuh bantuan?" : "Need help?"}
+                  </span>
                 </div>
-                <div className="mt-2 text-lg font-semibold tracking-[-0.03em]">
-                  {locale === "id" ? "Butuh bantuan cepat?" : "Need quick help?"}
-                </div>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-white/15"
-                aria-label="Close chat"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            </div>
-          </div>
-
-          <div className="max-h-[22rem] space-y-3 overflow-y-auto bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(248,244,237,0.96))] px-4 py-4">
-            {messages.map((message) => (
-              <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
-                <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-6 shadow-sm ${
-                    message.role === "user"
-                      ? "bg-zinc-950 text-white"
-                      : "bg-white text-zinc-700 ring-1 ring-zinc-200/80"
-                  }`}
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-white/15"
+                  aria-label="Close chat"
                 >
-                  <div>{message.content}</div>
-                  {message.fallback ? (
-                    <Link
-                      href={buildWhatsappLink(message.content)}
-                      target="_blank"
-                      className="mt-3 inline-flex items-center justify-center rounded-full bg-green-600 px-4 py-2 text-xs font-medium text-white transition hover:bg-green-700"
-                    >
-                      {locale === "id" ? "Hubungi via WhatsApp" : "Contact via WhatsApp"}
-                    </Link>
-                  ) : null}
-                </div>
+                  <X className="h-4 w-4" />
+                </button>
               </div>
-            ))}
-          </div>
-
-          <div className="border-t border-zinc-200/80 bg-white px-4 py-4">
-            <div className="flex gap-2">
-              <input
-                value={input}
-                onChange={(event) => setInput(event.target.value)}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter") {
-                    event.preventDefault();
-                    handleSend();
-                  }
-                }}
-                placeholder={locale === "id" ? "Tulis pertanyaanmu..." : "Type your question..."}
-                className="h-12 flex-1 rounded-2xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition focus:border-amber-300"
-              />
-              <button
-                type="button"
-                onClick={handleSend}
-                className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-950 text-white transition hover:bg-zinc-800"
-                aria-label="Send message"
-              >
-                <Send className="h-4 w-4" />
-              </button>
             </div>
 
-            <Link
-              href={whatsappHref}
-              target="_blank"
-              className="mt-3 inline-flex text-xs font-medium text-green-700 transition hover:text-green-800"
-            >
-              {locale === "id" ? "Atau langsung chat admin via WhatsApp" : "Or chat admin directly on WhatsApp"}
-            </Link>
+            <div className="max-h-[40vh] space-y-3 overflow-y-auto bg-[linear-gradient(180deg,rgba(255,255,255,0.92),rgba(248,244,237,0.96))] px-4 py-4 sm:max-h-[22rem]">
+              {messages.map((message) => (
+                <div key={message.id} className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}>
+                  <div
+                    className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-6 shadow-sm ${
+                      message.role === "user"
+                        ? "bg-zinc-950 text-white"
+                        : "bg-white text-zinc-700 ring-1 ring-zinc-200/80"
+                    }`}
+                  >
+                    <div>{message.content}</div>
+                    {message.fallback ? (
+                      <Link
+                        href={buildWhatsappLink(message.content)}
+                        target="_blank"
+                        className="mt-3 inline-flex items-center justify-center rounded-full bg-green-600 px-4 py-2 text-xs font-medium text-white transition hover:bg-green-700"
+                      >
+                        {locale === "id" ? "Hubungi via WhatsApp" : "Contact via WhatsApp"}
+                      </Link>
+                    ) : null}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="border-t border-zinc-200/80 bg-white px-3 py-3 sm:px-4 sm:py-4">
+              <div className="flex gap-2">
+                <input
+                  value={input}
+                  onChange={(event) => setInput(event.target.value)}
+                  onKeyDown={(event) => {
+                    if (event.key === "Enter") {
+                      event.preventDefault();
+                      handleSend();
+                    }
+                  }}
+                  placeholder={locale === "id" ? "Tulis pertanyaanmu..." : "Type your question..."}
+                  className="h-11 flex-1 rounded-2xl border border-zinc-200 bg-white px-4 text-sm text-zinc-900 outline-none transition focus:border-amber-300"
+                />
+                <button
+                  type="button"
+                  onClick={handleSend}
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-zinc-950 text-white transition hover:bg-zinc-800"
+                  aria-label="Send message"
+                >
+                  <Send className="h-4 w-4" />
+                </button>
+              </div>
+
+              <Link
+                href={whatsappHref}
+                target="_blank"
+                className="mt-2.5 inline-flex text-xs font-medium text-green-700 transition hover:text-green-800"
+              >
+                {locale === "id" ? "Atau langsung chat admin via WhatsApp" : "Or chat admin directly on WhatsApp"}
+              </Link>
+            </div>
           </div>
-        </div>
+        </>
       ) : null}
 
       <button
         type="button"
         onClick={() => setIsOpen((value) => !value)}
-        className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[linear-gradient(135deg,#111827_0%,#172554_48%,#d97706_100%)] text-white shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:-translate-y-0.5 hover:brightness-105"
+        className="fixed bottom-[4.75rem] right-3 z-[60] inline-flex h-12 w-12 items-center justify-center rounded-full bg-[linear-gradient(135deg,#111827_0%,#172554_48%,#d97706_100%)] text-white shadow-[0_18px_40px_rgba(15,23,42,0.22)] transition hover:-translate-y-0.5 hover:brightness-105 sm:right-4 sm:h-14 sm:w-14 md:bottom-6 md:right-6"
         aria-label="Open chat assistant"
       >
-        <MessageCircle className="h-6 w-6" />
+        <MessageCircle className="h-5 w-5 sm:h-6 sm:w-6" />
       </button>
-    </div>
+    </>
   );
 }
