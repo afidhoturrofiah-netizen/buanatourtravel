@@ -15,17 +15,17 @@ export default async function ContactPage({
     {
       icon: Phone,
       title: isId ? "Telepon" : "Phone",
-      value: "+62 21 555 8888",
+      value: "085875466660",
     },
     {
       icon: Mail,
       title: "Email",
-      value: "admin@buanatravel.com",
+      value: "buanasejahterasemarang@gmail.com",
     },
     {
       icon: MessageCircleMore,
       title: "WhatsApp",
-      value: "+62 812 9999 8888",
+      value: "085875466660",
     },
     {
       icon: MapPin,

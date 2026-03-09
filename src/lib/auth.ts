@@ -3,7 +3,7 @@ import { cookies } from "next/headers";
 const ADMIN_SESSION_COOKIE = "buana_admin_session";
 
 function getAdminEmail() {
-  return process.env.ADMIN_EMAIL || "admin@buanatravel.com";
+  return process.env.ADMIN_EMAIL || "buanasejahterasemarang@gmail.com";
 }
 
 function getAdminPassword() {

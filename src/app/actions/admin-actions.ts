@@ -14,7 +14,7 @@ function nowIso() {
 }
 
 function buildInquiryWhatsappUrl(inquiry: InquiryRecord) {
-  const phone = "6281258055550";
+  const phone = "6285875466660";
   const lines = [
     "Halo admin Buana Tour & Travel, saya baru saja mengirim inquiry.",
     "",

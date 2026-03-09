@@ -3,7 +3,7 @@ import { MessageCircle, Search, SendHorizonal } from "lucide-react";
 
 import type { Locale } from "@/i18n/routing";
 
-const whatsappHref = "https://wa.me/6281258055550?text=Halo%20admin%20Buana%20Tour%20%26%20Travel%2C%20saya%20ingin%20dibantu%20lebih%20lanjut.";
+const whatsappHref = "https://wa.me/6285875466660?text=Halo%20admin%20Buana%20Tour%20%26%20Travel%2C%20saya%20ingin%20dibantu%20lebih%20lanjut.";
 
 export default function MobileStickyCta({ locale }: { locale: Locale }) {
   const isId = locale === "id";

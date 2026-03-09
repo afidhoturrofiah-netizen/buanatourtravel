@@ -41,7 +41,7 @@ export default async function AdminLoginPage({
             <input type="hidden" name="locale" value={locale} />
             <div>
               <label className="mb-2 block text-sm font-medium text-zinc-800" htmlFor="email">Email admin</label>
-              <input id="email" name="email" type="email" className="w-full rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm outline-none ring-0 transition focus:border-amber-400" placeholder="admin@buanatourtravel.com" required />
+              <input id="email" name="email" type="email" className="w-full rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm outline-none ring-0 transition focus:border-amber-400" placeholder="buanasejahterasemarang@gmail.com" required />
             </div>
             <div>
               <label className="mb-2 block text-sm font-medium text-zinc-800" htmlFor="password">Password</label>

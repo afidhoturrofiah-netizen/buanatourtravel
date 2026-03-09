@@ -31,8 +31,8 @@ export default function Footer() {
               <div className="text-sm font-semibold text-zinc-950">Contact</div>
               <div className="mt-4 space-y-3 text-sm text-zinc-600">
                 <div>Semarang, Indonesia</div>
-                <div>admin@buanatravel.com</div>
-                <div>+62 21 555 8888</div>
+                <div>buanasejahterasemarang@gmail.com</div>
+                <div>085875466660</div>
               </div>
             </div>
           </div>

@@ -14,7 +14,7 @@ type ChatMessage = {
   fallback?: boolean;
 };
 
-const WHATSAPP_NUMBER = "6281258055550";
+const WHATSAPP_NUMBER = "6285875466660";
 
 function buildWhatsappLink(message: string) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
@@ -38,8 +38,8 @@ function getReply(input: string, locale: Locale, faqItems: FaqItem[]) {
       ? "Kalau kamu sudah tertarik, isi form inquiry di halaman kontak atau detail tour. Tim admin akan follow up lebih cepat dari dashboard."
       : "If you're interested, fill in the inquiry form on the contact or tour detail page. The admin team can follow up quickly from the dashboard.",
     contact: locale === "id"
-      ? "Kontak kami saat ini: Semarang, Indonesia, email admin@buanatravel.com, telepon +62 21 555 8888."
-      : "Our current contact details are: Semarang, Indonesia, email admin@buanatravel.com, phone +62 21 555 8888.",
+      ? "Kontak kami saat ini: Semarang, Indonesia, email buanasejahterasemarang@gmail.com, telepon 085875466660."
+      : "Our current contact details are: Semarang, Indonesia, email buanasejahterasemarang@gmail.com, phone 085875466660.",
   };
 
   if (/halo|hai|hi|hello|pagi|siang|sore/.test(text)) return { content: replies.greeting, fallback: false };
