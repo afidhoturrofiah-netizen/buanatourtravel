@@ -133,9 +133,7 @@ export async function saveTourAction(formData: FormData) {
     : [nextRecord, ...tours];
 
   await saveTours(nextTours);
-  revalidatePath(`/${locale}`);
-  revalidatePath(`/${locale}/tours`);
-  revalidatePath(`/${locale}/admin/tours`);
+  revalidatePath("/", "layout");
   redirect(`/${locale}/admin/tours?status=tour_saved`);
 }
 
@@ -145,8 +143,7 @@ export async function deleteTourAction(formData: FormData) {
   const tours = await getTours();
 
   await saveTours(tours.filter((item) => item.id !== id));
-  revalidatePath(`/${locale}/tours`);
-  revalidatePath(`/${locale}/admin/tours`);
+  revalidatePath("/", "layout");
   redirect(`/${locale}/admin/tours?status=tour_deleted`);
 }
 
@@ -191,8 +188,7 @@ export async function saveBlogAction(formData: FormData) {
     : [nextRecord, ...blogs];
 
   await saveBlogs(nextBlogs);
-  revalidatePath(`/${locale}/blog`);
-  revalidatePath(`/${locale}/admin/blog`);
+  revalidatePath("/", "layout");
   redirect(`/${locale}/admin/blog?status=blog_saved`);
 }
 
@@ -202,8 +198,7 @@ export async function deleteBlogAction(formData: FormData) {
   const blogs = await getBlogs();
 
   await saveBlogs(blogs.filter((item) => item.id !== id));
-  revalidatePath(`/${locale}/blog`);
-  revalidatePath(`/${locale}/admin/blog`);
+  revalidatePath("/", "layout");
   redirect(`/${locale}/admin/blog?status=blog_deleted`);
 }
 
@@ -224,8 +219,7 @@ export async function submitInquiryAction(formData: FormData) {
   };
 
   await saveInquiry(inquiry);
-  revalidatePath(`/${locale}/contact`);
-  revalidatePath(`/${locale}/admin/inquiries`);
+  revalidatePath("/", "layout");
   redirect(buildInquiryWhatsappUrl(inquiry));
 }
 
@@ -235,7 +229,7 @@ export async function deleteInquiryAction(formData: FormData) {
   const inquiries = await getInquiries();
 
   await saveInquiries(inquiries.filter((item) => item.id !== id));
-  revalidatePath(`/${locale}/admin/inquiries`);
+  revalidatePath("/", "layout");
   redirect(`/${locale}/admin/inquiries?status=inquiry_deleted`);
 }
 
@@ -293,8 +287,7 @@ export async function saveHomepageSettingsAction(formData: FormData) {
   };
 
   await saveHomepageSettings(nextSettings);
-  revalidatePath(`/${locale}`);
-  revalidatePath(`/${locale}/admin/homepage`);
+  revalidatePath("/", "layout");
   redirect(`/${locale}/admin/homepage?status=homepage_saved`);
 }
 
@@ -333,7 +326,6 @@ export async function saveHomepageDocumentationAction(formData: FormData) {
   };
 
   await saveHomepageSettings(nextSettings);
-  revalidatePath(`/${locale}`);
-  revalidatePath(`/${locale}/admin/documentation`);
+  revalidatePath("/", "layout");
   redirect(`/${locale}/admin/documentation?status=documentation_saved`);
 }
