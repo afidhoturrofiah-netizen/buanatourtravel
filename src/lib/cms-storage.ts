@@ -6,6 +6,10 @@ import type { BlogRecord, CmsData, HomepageSettings, InquiryRecord, TourRecord }
 
 const cmsFilePath = path.join(process.cwd(), "src", "lib", "cms-data.json");
 
+function isReadOnlyFilesystemError(error: unknown) {
+  return error instanceof Error && "code" in error && (error.code === "EROFS" || error.code === "EACCES" || error.code === "EPERM");
+}
+
 function nowIso() {
   return new Date().toISOString();
 }
@@ -229,37 +233,87 @@ async function ensureCmsFile() {
     await fs.access(cmsFilePath);
   } catch {
     const seed = buildSeedData();
-    await fs.writeFile(cmsFilePath, JSON.stringify(seed, null, 2), "utf8");
+    try {
+      await fs.writeFile(cmsFilePath, JSON.stringify(seed, null, 2), "utf8");
+    } catch (error) {
+      if (isReadOnlyFilesystemError(error)) {
+        return;
+      }
+
+      throw error;
+    }
   }
 }
 
 export async function readCmsData(): Promise<CmsData> {
   await ensureCmsFile();
-  const raw = await fs.readFile(cmsFilePath, "utf8");
-  const parsed = JSON.parse(raw) as CmsData;
+  let parsed: CmsData;
+
+  try {
+    const raw = await fs.readFile(cmsFilePath, "utf8");
+    parsed = JSON.parse(raw) as CmsData;
+  } catch (error) {
+    if (isReadOnlyFilesystemError(error)) {
+      return buildSeedData();
+    }
+
+    throw error;
+  }
 
   if (!parsed.homepage) {
     const seed = buildSeedData();
     parsed.homepage = seed.homepage;
-    await writeCmsData(parsed);
+    try {
+      await writeCmsData(parsed);
+    } catch (error) {
+      if (isReadOnlyFilesystemError(error)) {
+        return parsed;
+      }
+
+      throw error;
+    }
   }
 
   if (!parsed.homepage.topDestinations) {
     const seed = buildSeedData();
     parsed.homepage.topDestinations = seed.homepage.topDestinations;
-    await writeCmsData(parsed);
+    try {
+      await writeCmsData(parsed);
+    } catch (error) {
+      if (isReadOnlyFilesystemError(error)) {
+        return parsed;
+      }
+
+      throw error;
+    }
   }
 
   if (!parsed.homepage.faqItems) {
     const seed = buildSeedData();
     parsed.homepage.faqItems = seed.homepage.faqItems;
-    await writeCmsData(parsed);
+    try {
+      await writeCmsData(parsed);
+    } catch (error) {
+      if (isReadOnlyFilesystemError(error)) {
+        return parsed;
+      }
+
+      throw error;
+    }
   }
 
   if (!parsed.homepage.documentationItems) {
     const seed = buildSeedData();
     parsed.homepage.documentationItems = seed.homepage.documentationItems;
-    await writeCmsData(parsed);
+    try {
+      await writeCmsData(parsed);
+    } catch (error) {
+      if (isReadOnlyFilesystemError(error)) {
+        return parsed;
+      }
+
+      throw error;
+    }
   }
 
   if (parsed.homepage.topDestinations.some((item) => item.customLink === undefined)) {
@@ -267,20 +321,44 @@ export async function readCmsData(): Promise<CmsData> {
       ...item,
       customLink: item.customLink || "",
     }));
-    await writeCmsData(parsed);
+    try {
+      await writeCmsData(parsed);
+    } catch (error) {
+      if (isReadOnlyFilesystemError(error)) {
+        return parsed;
+      }
+
+      throw error;
+    }
   }
 
   if (parsed.tours.length === 0 && parsed.blogs.length === 0 && parsed.inquiries.length === 0) {
     const seed = buildSeedData();
-    await writeCmsData(seed);
-    return seed;
+    try {
+      await writeCmsData(seed);
+      return seed;
+    } catch (error) {
+      if (isReadOnlyFilesystemError(error)) {
+        return seed;
+      }
+
+      throw error;
+    }
   }
 
   return parsed;
 }
 
 export async function writeCmsData(data: CmsData) {
-  await fs.writeFile(cmsFilePath, JSON.stringify(data, null, 2), "utf8");
+  try {
+    await fs.writeFile(cmsFilePath, JSON.stringify(data, null, 2), "utf8");
+  } catch (error) {
+    if (isReadOnlyFilesystemError(error)) {
+      return;
+    }
+
+    throw error;
+  }
 }
 
 export async function getTours() {
