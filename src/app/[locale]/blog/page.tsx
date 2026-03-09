@@ -64,7 +64,7 @@ export default async function BlogPage({
                 </div>
 
                 <p className="mt-4 text-sm leading-7 text-zinc-600">
-                  {isId ? post.excerpt.id : post.excerpt.en}
+                  {(() => { const text = isId ? post.excerpt.id : post.excerpt.en; const words = text.split(/\s+/); return words.length > 25 ? words.slice(0, 25).join(" ") + "…" : text; })()}
                 </p>
 
                 <div className="mt-6 flex items-center justify-between rounded-2xl bg-zinc-950/95 px-4 py-3 text-sm text-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_4px_16px_rgba(0,0,0,0.3)] backdrop-blur-sm transition hover:bg-zinc-950 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_6px_20px_rgba(0,0,0,0.4)]">

@@ -177,7 +177,7 @@ export default async function HomePage({
                       {signatureTour ? (locale === "id" ? signatureTour.destination.id : signatureTour.destination.en) : "Lucerne · Interlaken · Zermatt"}
                     </div>
                     <div className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-zinc-950 md:mt-4 md:text-[2.2rem] xl:text-[1.95rem]">{signatureTour?.price || "IDR 42.800.000"}</div>
-                    <div className="mt-2 text-sm leading-6 text-zinc-600 md:text-[13px] md:leading-6">{signatureTour ? (locale === "id" ? signatureTour.summary.id : signatureTour.summary.en) : "9D7N dengan scenic train, premium stay, dan highlight terbaik untuk traveler premium."}</div>
+                    <div className="mt-2 text-sm leading-6 text-zinc-600 md:text-[13px] md:leading-6">{(() => { const text = signatureTour ? (locale === "id" ? signatureTour.summary.id : signatureTour.summary.en) : "9D7N dengan scenic train, premium stay, dan highlight terbaik untuk traveler premium."; const words = text.split(/\s+/); return words.length > 25 ? words.slice(0, 25).join(" ") + "…" : text; })()}</div>
                   </div>
 
                   <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 md:mt-4 md:gap-2.5 xl:gap-2">
