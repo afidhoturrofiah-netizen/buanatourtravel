@@ -1,17 +1,13 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
 import { defaultLocale, isLocale, type Locale } from "@/i18n/routing";
+import LazyChatBubble from "@/components/shared/LazyChatBubble";
 import MobileStickyCta from "@/components/shared/MobileStickyCta";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
-const ChatBubble = dynamic(() => import("@/components/shared/ChatBubble"), {
-  ssr: false,
-});
 
 export const metadata: Metadata = {
   title: "Buana Tour & Travel",
@@ -41,7 +37,7 @@ export default async function LocaleLayout({
         <div className="flex-1">{children}</div>
         <Footer />
         <MobileStickyCta locale={resolvedLocale} />
-        <ChatBubble locale={resolvedLocale} />
+        <LazyChatBubble locale={resolvedLocale} />
       </div>
     </NextIntlClientProvider>
   );
