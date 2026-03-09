@@ -40,6 +40,11 @@ const statusMap: Record<string, { title: string; description: string; tone: "suc
     description: "Galeri dokumentasi homepage sudah diperbarui.",
     tone: "success",
   },
+  storage_read_only: {
+    title: "Penyimpanan production bersifat read-only",
+    description: "Perubahan dan upload gambar tidak bisa disimpan di deployment ini. Gunakan storage eksternal atau server yang mendukung write access untuk CMS file-based.",
+    tone: "warning",
+  },
 };
 
 export default function AdminStatusNotice({ status }: AdminStatusNoticeProps) {
