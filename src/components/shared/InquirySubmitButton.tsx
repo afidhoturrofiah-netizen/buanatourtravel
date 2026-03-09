@@ -19,12 +19,12 @@ export default function InquirySubmitButton({ isId }: { isId: boolean }) {
         {pending ? (
           <span className="inline-flex items-center gap-2 text-amber-700">
             <LoaderCircle className="h-4 w-4 animate-spin" />
-            {isId ? "Inquiry sedang disimpan lalu kamu akan diarahkan ke WhatsApp admin." : "Your inquiry is being saved and you will be redirected to admin WhatsApp."}
+            {isId ? "Inquiry sedang diproses, Anda akan diarahkan ke WhatsApp kami." : "Your inquiry is being processed, you will be redirected to our WhatsApp."}
           </span>
         ) : isId ? (
-          "Setelah submit, inquiry tetap masuk ke dashboard admin lalu WhatsApp akan terbuka otomatis."
+          "Setelah submit, inquiry Anda akan tersimpan dan WhatsApp akan terbuka otomatis."
         ) : (
-          "After submission, the inquiry is still saved to the admin dashboard and WhatsApp opens automatically."
+          "After submission, your inquiry will be saved and WhatsApp opens automatically."
         )}
       </div>
     </div>

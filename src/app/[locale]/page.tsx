@@ -69,9 +69,9 @@ export default async function HomePage({
   }));
 
   const highlights = [
-    { icon: Sparkles, title: "Curated Luxury", copy: "Selected itineraries with elevated stays and memorable touches." },
-    { icon: ShieldCheck, title: "Trusted Service", copy: "Responsive assistance before, during, and after your journey." },
-    { icon: Trophy, title: "Premium Experience", copy: "Designed for couples, families, and executive travel groups." },
+    { icon: Sparkles, title: locale === "id" ? "Paket Terkurasi" : "Curated Packages", copy: locale === "id" ? "Itinerary pilihan dengan akomodasi terbaik dan pengalaman yang berkesan di setiap destinasi." : "Hand-picked itineraries with top accommodations and memorable experiences at every destination." },
+    { icon: ShieldCheck, title: locale === "id" ? "Layanan Terpercaya" : "Trusted Service", copy: locale === "id" ? "Tim kami siap membantu sebelum, selama, dan setelah perjalanan Anda dengan respons cepat." : "Our team is ready to assist before, during, and after your trip with fast response." },
+    { icon: Trophy, title: locale === "id" ? "Pengalaman Premium" : "Premium Experience", copy: locale === "id" ? "Dirancang untuk pasangan, keluarga, dan grup perusahaan yang menginginkan perjalanan berkualitas." : "Designed for couples, families, and corporate groups who want quality travel experiences." },
   ];
   const testimonials = [
     {
@@ -145,9 +145,9 @@ export default async function HomePage({
 
                 <div className="mt-4 grid max-w-xl grid-cols-1 gap-2.5 sm:grid-cols-3 md:mt-5 md:gap-3 xl:mt-4">
                   {[
-                    { value: "120+", label: "Curated Tours" },
-                    { value: "25", label: "Premium Destinations" },
-                    { value: "4.9/5", label: "Client Rating" },
+                    { value: "120+", label: locale === "id" ? "Paket Tour" : "Tour Packages" },
+                    { value: "25", label: locale === "id" ? "Destinasi" : "Destinations" },
+                    { value: "4.9/5", label: locale === "id" ? "Rating Pelanggan" : "Client Rating" },
                   ].map((item) => (
                     <div key={item.label} className="rounded-[20px] border border-white/10 bg-white/8 px-4 py-3.5 backdrop-blur-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_4px_16px_rgba(0,0,0,0.08)] transition hover:bg-white/12 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_6px_20px_rgba(0,0,0,0.12)] md:rounded-[22px] md:px-3.5 md:py-3.5">
                       <div className="text-lg font-semibold text-white md:text-xl">{item.value}</div>
@@ -163,11 +163,11 @@ export default async function HomePage({
                 <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(243,239,232,0.95))] p-4 text-zinc-950 shadow-[0_24px_80px_rgba(8,18,36,0.18),inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-sm transition hover:shadow-[0_28px_100px_rgba(8,18,36,0.22),inset_0_1px_0_rgba(255,255,255,0.7)] hover:-translate-y-1 md:rounded-[28px] md:p-5 xl:p-4">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <div className="text-[10px] uppercase tracking-[0.32em] text-amber-700/80">Signature Pick</div>
+                      <div className="text-[10px] uppercase tracking-[0.32em] text-amber-700/80">{locale === "id" ? "Paket Unggulan" : "Signature Pick"}</div>
                       <div className="mt-2 text-xl font-semibold tracking-[-0.04em] text-zinc-950 md:text-2xl md:leading-[1.1] xl:text-[1.55rem]">{signatureTour ? (locale === "id" ? signatureTour.title.id : signatureTour.title.en) : "Swiss Alps Panorama"}</div>
                     </div>
                     <div className="shrink-0 rounded-full border border-zinc-200 bg-white px-2.5 py-1 text-[10px] text-zinc-500 shadow-sm">
-                      Limited Seats
+                      {locale === "id" ? "Kursi Terbatas" : "Limited Seats"}
                     </div>
                   </div>
 
@@ -182,17 +182,17 @@ export default async function HomePage({
 
                   <div className="mt-2.5 grid grid-cols-2 gap-2 xl:mt-2">
                     <div className="rounded-xl bg-zinc-950/95 px-3.5 py-3 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_4px_16px_rgba(0,0,0,0.3)] backdrop-blur-sm">
-                      <div className="text-[9px] uppercase tracking-[0.28em] text-white/50">Duration</div>
+                      <div className="text-[9px] uppercase tracking-[0.28em] text-white/50">{locale === "id" ? "Durasi" : "Duration"}</div>
                       <div className="mt-1 text-base font-semibold">{signatureTour?.duration || "9D7N"}</div>
                     </div>
                     <div className="rounded-xl bg-amber-50/95 px-3.5 py-3 text-zinc-900 ring-1 ring-amber-100/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_4px_16px_rgba(245,158,11,0.08)] backdrop-blur-sm">
-                      <div className="text-[9px] uppercase tracking-[0.28em] text-amber-700/70">Service</div>
+                      <div className="text-[9px] uppercase tracking-[0.28em] text-amber-700/70">{locale === "id" ? "Layanan" : "Service"}</div>
                       <div className="mt-1 text-base font-semibold">{signatureTour ? (locale === "id" ? signatureTour.category.id : signatureTour.category.en) : "Elite Care"}</div>
                     </div>
                   </div>
 
                   <div className="mt-2 rounded-xl border border-amber-200/70 bg-amber-50/95 px-3.5 py-2.5 text-[12px] leading-[1.4] text-amber-900 xl:text-[11px]">
-                    Private consultation available for family, honeymoon, and group departures.
+                    {locale === "id" ? "Konsultasi gratis untuk perjalanan keluarga, honeymoon, dan grup." : "Free consultation for family trips, honeymoons, and group departures."}
                   </div>
                 </div>
               </div>
@@ -206,11 +206,11 @@ export default async function HomePage({
           <ScrollReveal direction="up" delay={100}>
             <div>
               <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">
-                Refined Escapes
+                {locale === "id" ? "Promo Unggulan" : "Featured Promos"}
               </div>
-              <h2 className="section-title mt-4">Featured promos designed for discerning travelers</h2>
+              <h2 className="section-title mt-4">{locale === "id" ? "Paket tour pilihan dengan harga terbaik" : "Top tour packages at the best prices"}</h2>
               <p className="section-copy mt-4 max-w-md">
-                Elegant itineraries, beautifully paced experiences, and high-value travel offers that feel exclusive from the first click.
+                {locale === "id" ? "Temukan penawaran spesial untuk berbagai destinasi favorit dengan itinerary yang sudah terkurasi dan siap berangkat." : "Discover special offers for popular destinations with curated itineraries, ready to depart."}
               </p>
             </div>
           </ScrollReveal>
@@ -235,7 +235,7 @@ export default async function HomePage({
                     className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-zinc-900 transition-all duration-300 group-hover:text-amber-700 group-hover:translate-x-1"
                     href={`/${resolvedLocale}/tours/${tour.slug}`}
                   >
-                    View package
+                    {locale === "id" ? "Lihat paket" : "View package"}
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
@@ -270,7 +270,7 @@ export default async function HomePage({
           <ScrollReveal direction="up" delay={320}>
             <div>
               <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">
-                {locale === "id" ? "Social Proof" : "Social Proof"}
+                {locale === "id" ? "Testimoni Pelanggan" : "Customer Testimonials"}
               </div>
               <h2 className="section-title mt-4">
                 {locale === "id" ? "Review pelanggan yang bikin calon traveler lebih yakin" : "Customer reviews that build travel confidence"}
@@ -285,7 +285,7 @@ export default async function HomePage({
                 {[
                   { value: "4.9/5", label: locale === "id" ? "Kepuasan" : "Satisfaction" },
                   { value: "120+", label: locale === "id" ? "Keberangkatan" : "Departures" },
-                  { value: "98%", label: locale === "id" ? "Repeat intent" : "Repeat intent" },
+                  { value: "98%", label: locale === "id" ? "Ingin Kembali" : "Would Return" },
                 ].map((item) => (
                   <div key={item.label} className="rounded-[22px] border border-zinc-200 bg-white px-4 py-4 shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
                     <div className="text-lg font-semibold tracking-[-0.03em] text-zinc-950">{item.value}</div>
@@ -332,13 +332,13 @@ export default async function HomePage({
                     {locale === "id" ? "Dokumentasi Perjalanan" : "Travel Documentation"}
                   </div>
                   <h2 className="section-title mt-4">
-                    {locale === "id" ? "Momen keberangkatan yang terus bergerak seperti pengalaman nyata" : "Travel moments in motion, just like the real experience"}
+                    {locale === "id" ? "Momen perjalanan pelanggan kami di berbagai destinasi" : "Our customers' travel moments at various destinations"}
                   </h2>
                 </div>
                 <p className="section-copy max-w-2xl">
                   {locale === "id"
-                    ? "Daripada galeri statis, section ini menampilkan dokumentasi foto yang bergerak horizontal agar homepage terasa lebih hidup, lebih dipercaya, dan lebih dekat dengan pengalaman traveler sungguhan."
-                    : "Instead of a static gallery, this section uses a horizontal moving photo stream so the homepage feels more alive, more trustworthy, and closer to real traveler experiences."}
+                    ? "Lihat dokumentasi foto dari berbagai keberangkatan yang sudah kami layani — mulai dari honeymoon, family trip, hingga perjalanan grup perusahaan."
+                    : "Browse photo documentation from various departures we've served — from honeymoons, family trips, to corporate group journeys."}
                 </p>
               </div>
             </div>
@@ -386,11 +386,11 @@ export default async function HomePage({
             <div className="luxury-card p-5 md:p-8">
               <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-4">
                 <div>
-                  <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">Top Destinations</div>
+                  <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">{locale === "id" ? "Destinasi Populer" : "Top Destinations"}</div>
                   <h2 className="section-title mt-4">{t("popularTitle")}</h2>
                 </div>
                 <Link className="hidden text-sm font-medium text-amber-700 md:inline-flex" href={`/${resolvedLocale}/tours`}>
-                  Explore all
+                  {locale === "id" ? "Lihat semua" : "Explore all"}
                 </Link>
               </div>
 
@@ -407,7 +407,7 @@ export default async function HomePage({
                       </div>
                       <div className="mt-3 text-sm text-zinc-600">{locale === "id" ? destination.label.id : destination.label.en}</div>
                       <div className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-zinc-900 transition-all duration-300 group-hover:text-amber-700 group-hover:translate-x-1">
-                        Discover now
+                        {locale === "id" ? "Jelajahi" : "Discover now"}
                         <ArrowRight className="h-4 w-4" />
                       </div>
                     </Link>
@@ -445,19 +445,19 @@ export default async function HomePage({
           <div className="rounded-[26px] border border-amber-200/60 bg-[linear-gradient(135deg,rgba(255,248,230,0.92),rgba(255,255,255,0.97))] px-5 py-7 shadow-[0_20px_70px_rgba(180,134,11,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-sm transition hover:shadow-[0_24px_80px_rgba(180,134,11,0.12),inset_0_1px_0_rgba(255,255,255,0.8)] hover:-translate-y-0.5 md:rounded-[32px] md:px-10 md:py-10">
             <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center lg:gap-6">
               <div>
-                <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">Travel Journal</div>
+                <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">{locale === "id" ? "Blog Perjalanan" : "Travel Journal"}</div>
                 <h3 className="mt-3 text-xl font-semibold tracking-[-0.03em] text-zinc-950 md:text-3xl">
-                  Discover stories, destination tips, and curated inspiration
+                  {locale === "id" ? "Tips destinasi, cerita perjalanan, dan inspirasi liburan" : "Destination tips, travel stories, and holiday inspiration"}
                 </h3>
                 <p className="mt-3 max-w-2xl text-sm leading-7 text-zinc-600">
-                  Pair luxury visuals with practical travel content to build trust, inspire exploration, and support conversion into inquiries.
+                  {locale === "id" ? "Baca artikel terbaru seputar destinasi, tips perjalanan, dan rekomendasi paket tour dari tim Buana Tour & Travel." : "Read the latest articles about destinations, travel tips, and tour package recommendations from the Buana Tour & Travel team."}
                 </p>
               </div>
               <Link
                 href={`/${resolvedLocale}/blog`}
                 className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-zinc-950 px-5 py-3 text-sm font-medium text-white shadow-lg shadow-zinc-950/25 transition-all duration-300 hover:bg-zinc-800 hover:shadow-xl hover:shadow-zinc-950/30 hover:-translate-y-0.5 active:translate-y-0 md:px-6"
               >
-                Visit blog
+                {locale === "id" ? "Baca blog" : "Visit blog"}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

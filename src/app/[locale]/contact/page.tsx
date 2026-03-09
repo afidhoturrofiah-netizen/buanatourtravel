@@ -38,8 +38,8 @@ export default async function ContactPage({
     <div className="pb-10">
       <PageHero
         eyebrow={isId ? "Hubungi Kami" : "Contact Us"}
-        title={isId ? "Bangun inquiry yang lebih cepat dengan tampilan yang lebih profesional" : "Turn interest into inquiries with a more professional presentation"}
-        description={isId ? "Halaman kontak ini disiapkan untuk mendukung komunikasi awal, konsultasi paket, dan alur inquiry yang nanti dihubungkan ke database." : "This contact page is designed to support early conversations, package consultation, and a future inquiry flow connected to the database."}
+        title={isId ? "Hubungi kami untuk konsultasi perjalanan Anda" : "Contact us for your travel consultation"}
+        description={isId ? "Kirim pertanyaan atau konsultasikan kebutuhan perjalanan Anda. Tim kami siap membantu menemukan paket tour terbaik untuk Anda." : "Send us your questions or discuss your travel needs. Our team is ready to help you find the best tour package."}
       />
 
       <section className="luxury-shell py-12 md:py-16">
@@ -73,7 +73,7 @@ export default async function ContactPage({
                 {isId ? "Ceritakan kebutuhan perjalananmu" : "Tell us about your travel needs"}
               </div>
               <p className="mt-4 text-sm leading-7 text-zinc-600">
-                {isId ? "Form ini akan langsung menyimpan inquiry ke dashboard admin agar tim bisa follow up lebih cepat." : "This form saves directly to the admin dashboard so your team can follow up faster."}
+                {isId ? "Isi form di bawah ini dan tim kami akan segera menghubungi Anda untuk follow up." : "Fill in the form below and our team will contact you shortly for follow up."}
               </p>
 
               <InquiryForm locale={locale} type="contact" destinationLabel="General inquiry" isId={isId} />

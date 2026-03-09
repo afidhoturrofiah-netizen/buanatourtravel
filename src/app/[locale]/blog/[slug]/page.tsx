@@ -64,13 +64,13 @@ export default async function BlogDetailPage({
 
           <aside className="luxury-card p-5 md:p-6 lg:sticky lg:top-24 lg:self-start xl:p-7">
             <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">
-              {isId ? "Nilai Tambah Brand" : "Brand Value"}
+              {isId ? "Blog Perjalanan" : "Travel Blog"}
             </div>
             <div className="mt-4 text-xl font-semibold tracking-[-0.03em] text-zinc-950 md:text-2xl">
-              {isId ? "Blog yang baik membantu travel terlihat lebih terpercaya" : "Great editorial content makes a travel brand more trustworthy"}
+              {isId ? "Artikel perjalanan untuk inspirasi liburan Anda" : "Travel articles for your holiday inspiration"}
             </div>
             <p className="mt-3 text-sm leading-6 text-zinc-600 md:mt-4 md:leading-7">
-              {isId ? "Konten seperti ini akan sangat cocok dihubungkan ke CMS admin agar tim bisa menambah artikel secara rutin." : "This content structure is a strong fit for the upcoming admin CMS so your team can publish regularly."}
+              {isId ? "Baca artikel terbaru seputar tips perjalanan, rekomendasi destinasi, dan pengalaman wisata dari tim Buana Tour & Travel." : "Read the latest articles about travel tips, destination recommendations, and travel experiences from the Buana Tour & Travel team."}
             </p>
           </aside>
         </div>

@@ -19,16 +19,16 @@ export default function Footer() {
             </div>
 
             <div>
-              <div className="text-sm font-semibold text-zinc-950">Explore</div>
+              <div className="text-sm font-semibold text-zinc-950">Layanan</div>
               <div className="mt-4 space-y-3 text-sm text-zinc-600">
-                <div>Tours</div>
-                <div>Promotions</div>
-                <div>Travel Inspiration</div>
+                <div>Paket Tour</div>
+                <div>Blog & Inspirasi</div>
+                <div>Kontak & Inquiry</div>
               </div>
             </div>
 
             <div>
-              <div className="text-sm font-semibold text-zinc-950">Contact</div>
+              <div className="text-sm font-semibold text-zinc-950">Kontak</div>
               <div className="mt-4 space-y-3 text-sm text-zinc-600">
                 <div>Semarang, Indonesia</div>
                 <div>buanasejahterasemarang@gmail.com</div>

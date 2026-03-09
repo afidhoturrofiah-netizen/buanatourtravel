@@ -15,29 +15,29 @@ export default async function AboutPage({
       icon: Sparkles,
       title: isId ? "Presentasi Premium" : "Premium Presentation",
       copy: isId
-        ? "Setiap paket dan halaman dirancang agar tampil meyakinkan, rapi, dan bernilai tinggi."
-        : "Every package and page is designed to feel convincing, polished, and high-value.",
+        ? "Setiap paket wisata kami disusun dengan detail untuk memastikan kenyamanan dan pengalaman terbaik."
+        : "Every tour package is carefully crafted to ensure comfort and the best travel experience.",
     },
     {
       icon: Handshake,
       title: isId ? "Layanan Terpercaya" : "Trusted Service",
       copy: isId
-        ? "Kami ingin calon traveler merasa aman sejak tahap konsultasi hingga perjalanan selesai."
-        : "We want travelers to feel supported from the first consultation to the end of the trip.",
+        ? "Tim kami selalu siap membantu dari konsultasi awal hingga perjalanan Anda selesai dengan lancar."
+        : "Our team is always ready to help from initial consultation until your trip is completed smoothly.",
     },
     {
       icon: Compass,
       title: isId ? "Kurasi Destinasi" : "Curated Destinations",
       copy: isId
-        ? "Rute dan pengalaman dipilih untuk menyeimbangkan kenyamanan, estetika, dan efisiensi perjalanan."
-        : "Routes and experiences are selected to balance comfort, aesthetics, and travel efficiency.",
+        ? "Destinasi dan rute kami pilih berdasarkan kenyamanan, keindahan, dan efisiensi waktu perjalanan."
+        : "We select destinations and routes based on comfort, beauty, and travel time efficiency.",
     },
     {
       icon: Gem,
       title: isId ? "Nilai Elegan" : "Elegant Value",
       copy: isId
-        ? "Brand travel modern perlu terlihat premium tanpa kehilangan kesan hangat dan membantu."
-        : "A modern travel brand should feel premium without losing warmth and helpfulness.",
+        ? "Kami percaya perjalanan berkualitas harus tetap terjangkau tanpa mengorbankan kenyamanan."
+        : "We believe quality travel should remain affordable without sacrificing comfort.",
     },
   ];
 
@@ -45,8 +45,8 @@ export default async function AboutPage({
     <div className="pb-10">
       <PageHero
         eyebrow={isId ? "Tentang Kami" : "About Us"}
-        title={isId ? "Buana Tour & Travel hadir untuk perjalanan yang lebih elegan" : "Buana Tour & Travel is built for more elegant journeys"}
-        description={isId ? "Kami membangun pengalaman digital dan layanan travel yang modern, mewah, dan mudah dipercaya oleh calon pelanggan." : "We build a modern, premium, and trustworthy travel experience for today’s customers."}
+        title={isId ? "Buana Tour & Travel hadir untuk perjalanan yang lebih berkesan" : "Buana Tour & Travel is here for more memorable journeys"}
+        description={isId ? "Kami menyediakan layanan tour dan travel terpercaya dengan paket wisata terkurasi ke berbagai destinasi favorit di Asia dan Eropa." : "We provide trusted tour and travel services with curated packages to popular destinations across Asia and Europe."}
       />
 
       <section className="luxury-shell py-12 md:py-16">
@@ -56,12 +56,12 @@ export default async function AboutPage({
               {isId ? "Profil Brand" : "Brand Profile"}
             </div>
             <div className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-zinc-950">
-              {isId ? "Travel yang tampil rapi, terasa premium, dan tetap dekat dengan pelanggan" : "A travel brand that feels polished, premium, and still personal"}
+              {isId ? "Perjalanan berkualitas dengan pelayanan yang hangat dan profesional" : "Quality travel with warm and professional service"}
             </div>
             <p className="mt-5 text-sm leading-8 text-zinc-600 md:text-base">
               {isId
-                ? "Buana Tour & Travel dirancang untuk menghadirkan presentasi paket wisata yang lebih kuat, lebih meyakinkan, dan lebih siap membantu penjualan. Website ini menonjolkan visual premium, struktur informasi yang jelas, serta flow inquiry yang nantinya terhubung ke CMS/admin."
-                : "Buana Tour & Travel is designed to present travel packages more clearly, convincingly, and in a way that supports stronger sales. The website emphasizes premium visuals, clear information structure, and an inquiry flow that will later connect to the admin CMS."}
+                ? "Buana Tour & Travel adalah agen perjalanan wisata yang berbasis di Semarang. Kami melayani paket tour domestik dan internasional untuk keluarga, pasangan, grup perusahaan, dan rombongan. Dengan pengalaman bertahun-tahun, kami berkomitmen menghadirkan perjalanan yang nyaman, terorganisir, dan berkesan."
+                : "Buana Tour & Travel is a travel agency based in Semarang. We serve domestic and international tour packages for families, couples, corporate groups, and parties. With years of experience, we are committed to delivering comfortable, well-organized, and memorable journeys."}
             </p>
           </div>
 

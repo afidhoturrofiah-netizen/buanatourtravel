@@ -102,7 +102,7 @@ export default async function TourDetailPage({
                 {isId ? "Buat inquiry cepat untuk paket ini" : "Create a quick inquiry for this package"}
               </div>
               <p className="mt-3 text-sm leading-6 text-zinc-600 md:mt-4 md:leading-7">
-                {isId ? "Inquiry dari form ini akan langsung tersimpan ke dashboard admin agar tim bisa follow up lebih cepat." : "This inquiry form saves directly to the admin dashboard so your team can follow up faster."}
+                {isId ? "Isi form ini dan tim kami akan segera menghubungi Anda via WhatsApp untuk follow up lebih cepat." : "Fill this form and our team will contact you via WhatsApp for faster follow up."}
               </p>
 
               <InquiryForm locale={locale} type="tour" tourSlug={tour.slug} destinationLabel={isId ? tour.destination.id : tour.destination.en} isId={isId} />
@@ -110,7 +110,7 @@ export default async function TourDetailPage({
               <div className="mt-6 inline-flex items-start gap-3 rounded-2xl border border-amber-200/70 bg-amber-50 px-4 py-4 text-sm text-amber-900">
                 <ShieldCheck className="mt-0.5 h-5 w-5" />
                 <div>
-                  {isId ? "Presentasi yang rapi meningkatkan kepercayaan dan memudahkan calon pelanggan mengambil keputusan." : "A polished presentation builds trust and helps potential travelers decide faster."}
+                  {isId ? "Konsultasi gratis tanpa komitmen. Kami siap bantu Anda merencanakan perjalanan terbaik." : "Free consultation with no commitment. We're ready to help you plan the best trip."}
                 </div>
               </div>
             </div>

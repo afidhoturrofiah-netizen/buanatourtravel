@@ -19,7 +19,7 @@ export default async function UserRegisterPage({
             {isId ? "Buat akun baru" : "Create your new account"}
           </h1>
           <p className="mt-3 text-sm leading-7 text-zinc-600">
-            {isId ? "Halaman ini disiapkan untuk flow akun user. Nanti bisa disambungkan ke sistem autentikasi user." : "This page is prepared for the user account flow and can be connected to user authentication later."}
+            {isId ? "Daftar akun untuk mempermudah proses booking dan menyimpan riwayat perjalanan Anda." : "Register an account to simplify booking and save your travel history."}
           </p>
 
           <form className="mt-8 space-y-4">
