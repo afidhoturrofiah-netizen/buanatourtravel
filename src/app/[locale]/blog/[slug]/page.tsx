@@ -31,7 +31,7 @@ export default async function BlogDetailPage({
       <section className="luxury-shell py-10 md:py-14 xl:py-16">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px] xl:grid-cols-[minmax(0,1fr)_340px] xl:gap-7">
           <article className="luxury-card p-5 md:p-7 xl:p-8">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-[22px] bg-zinc-100 md:aspect-[16/9] md:rounded-[28px]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-zinc-100 md:rounded-[28px]">
               <Image
                 src={post.image}
                 alt={isId ? post.title.id : post.title.en}

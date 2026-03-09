@@ -33,7 +33,7 @@ export default async function TourDetailPage({
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] xl:grid-cols-[1.15fr_0.85fr] xl:gap-7">
           <div className="space-y-6">
             <div className="luxury-card p-5 md:p-7 xl:p-8">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-[22px] bg-zinc-100 md:aspect-[16/9] md:rounded-[28px]">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-zinc-100 md:rounded-[28px]">
                 <Image
                   src={tour.image}
                   alt={isId ? tour.title.id : tour.title.en}
