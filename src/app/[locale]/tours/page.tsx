@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Filter, MapPin, Star } from "lucide-react";
+import { ArrowRight, MapPin, Star } from "lucide-react";
 
 import EmptyStateCard from "@/components/shared/EmptyStateCard";
 import PageHero from "@/components/shared/PageHero";
 import { getTours } from "@/lib/cms-storage";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import CollapsibleFilter from "@/components/shared/CollapsibleFilter";
 
 export const dynamic = "force-dynamic";
 
@@ -148,28 +149,11 @@ export default async function ToursPage({
       />
 
       <section className="luxury-shell py-12 md:py-14 xl:py-16">
-        <div className="luxury-card p-5 md:p-6 xl:p-7">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
-            <div>
-              <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">
-                {isId ? "Penyaring Paket" : "Package Filter"}
-              </div>
-              <div className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-zinc-950 lg:text-[1.75rem]">
-                {isId ? "Temukan tour sesuai gaya perjalanan" : "Find tours that match your travel style"}
-              </div>
-            </div>
-
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-200/70 bg-white/95 px-4 py-2 text-sm text-zinc-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_4px_16px_rgba(245,158,11,0.06)] backdrop-blur-sm transition hover:bg-white hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_6px_20px_rgba(245,158,11,0.1)] lg:text-[13px]">
-              <Filter className="h-4 w-4 text-amber-700" />
-              {activeFilters.length
-                ? activeFilters.join(" • ")
-                : isId
-                  ? "Family, honeymoon, group, corporate"
-                  : "Family, honeymoon, group, corporate"}
-            </div>
-          </div>
-
-          <form className="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-6">
+        <CollapsibleFilter
+          label={isId ? "Filter & Cari Paket" : "Filter & Search"}
+          activeLabel={activeFilters.length ? activeFilters.join(" · ") : (isId ? "Semua paket ditampilkan" : "Showing all packages")}
+        >
+          <form className="grid gap-3 md:grid-cols-2 xl:grid-cols-6">
             <input
               type="text"
               name="q"
@@ -231,7 +215,7 @@ export default async function ToursPage({
               </Link>
             </div>
           </form>
-        </div>
+        </CollapsibleFilter>
 
         <ScrollReveal className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:gap-6">
           {tours.length === 0 ? (
