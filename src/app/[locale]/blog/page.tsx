@@ -19,7 +19,7 @@ export default async function BlogPage({
   const blogs = await getBlogs();
 
   return (
-    <div className="pb-10">
+    <div className="pb-24 md:pb-10">
       <PageHero
         eyebrow={isId ? "Blog Perjalanan" : "Travel Journal"}
         title={isId ? "Tips destinasi, cerita perjalanan, dan inspirasi liburan" : "Destination tips, travel stories, and holiday inspiration"}
@@ -27,7 +27,7 @@ export default async function BlogPage({
       />
 
       <section className="luxury-shell py-12 md:py-14 xl:py-16">
-        <ScrollReveal className="grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:gap-6">
+        <ScrollReveal className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:gap-6">
           {blogs.length === 0 ? (
             <EmptyStateCard
               className="md:col-span-2 xl:col-span-3"

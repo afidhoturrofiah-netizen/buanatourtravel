@@ -99,7 +99,7 @@ export default function ChatBubble({ locale, faqItems }: { locale: Locale; faqIt
   }
 
   return (
-    <div className="fixed bottom-24 right-4 z-[60] flex items-end justify-end md:bottom-6 md:right-6">
+    <div className="fixed bottom-[5.5rem] right-3 z-[60] flex items-end justify-end sm:right-4 md:bottom-6 md:right-6">
       {isOpen ? (
         <div className="w-[calc(100vw-2rem)] max-w-sm overflow-hidden rounded-[28px] border border-white/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.18)] backdrop-blur-xl">
           <div className="bg-[linear-gradient(135deg,#111827_0%,#172554_48%,#6b4f12_100%)] px-4 py-4 text-white">

@@ -35,7 +35,7 @@ export default async function ContactPage({
   ];
 
   return (
-    <div className="pb-10">
+    <div className="pb-24 md:pb-10">
       <PageHero
         eyebrow={isId ? "Hubungi Kami" : "Contact Us"}
         title={isId ? "Hubungi kami untuk konsultasi perjalanan Anda" : "Contact us for your travel consultation"}

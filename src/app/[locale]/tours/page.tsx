@@ -140,7 +140,7 @@ export default async function ToursPage({
   ].filter(Boolean);
 
   return (
-    <div className="pb-10">
+    <div className="pb-24 md:pb-10">
       <PageHero
         eyebrow={isId ? "Paket Tour" : "Tour Packages"}
         title={isId ? "Temukan paket tour terbaik untuk perjalanan Anda" : "Find the best tour packages for your journey"}
@@ -233,7 +233,7 @@ export default async function ToursPage({
           </form>
         </div>
 
-        <ScrollReveal className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3 2xl:gap-6">
+        <ScrollReveal className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3 2xl:gap-6">
           {tours.length === 0 ? (
             <EmptyStateCard
               className="md:col-span-2 xl:col-span-3"

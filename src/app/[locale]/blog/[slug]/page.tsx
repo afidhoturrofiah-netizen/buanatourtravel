@@ -21,7 +21,7 @@ export default async function BlogDetailPage({
   const content = isId ? post.content.id : post.content.en;
 
   return (
-    <div className="pb-10">
+    <div className="pb-24 md:pb-10">
       <PageHero
         eyebrow={isId ? "Editorial Travel" : "Travel Editorial"}
         title={isId ? post.title.id : post.title.en}

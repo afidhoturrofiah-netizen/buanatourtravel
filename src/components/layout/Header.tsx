@@ -27,18 +27,18 @@ export default function Header({ locale }: { locale: Locale }) {
   );
 
   return (
-    <header className="sticky top-0 z-50 px-3 pt-3 md:px-5 md:pt-4 xl:px-6 xl:pt-5">
+    <header className="sticky top-0 z-50 px-2 pt-2 sm:px-3 sm:pt-3 md:px-5 md:pt-4 xl:px-6 xl:pt-5">
       <div className="luxury-shell">
-        <div className="flex items-center justify-between gap-2 rounded-[22px] border border-white/80 bg-white/88 px-3 py-2.5 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl md:gap-3 md:rounded-[26px] md:px-4 md:py-2.5 lg:gap-4 lg:px-5 lg:py-3 xl:rounded-[28px]">
-          <Link href={`/${locale}`} className="flex min-w-0 items-center gap-2 md:gap-2.5 lg:gap-3">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-zinc-950 via-zinc-800 to-amber-500 text-white shadow-lg shadow-amber-200/40 md:h-9 md:w-9 lg:h-10 lg:w-10">
+        <div className="flex items-center justify-between gap-1.5 rounded-[18px] border border-white/80 bg-white/88 px-2.5 py-2 shadow-[0_12px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:gap-2 sm:rounded-[22px] sm:px-3 sm:py-2.5 md:gap-3 md:rounded-[26px] md:px-4 md:py-2.5 lg:gap-4 lg:px-5 lg:py-3 xl:rounded-[28px]">
+          <Link href={`/${locale}`} className="flex min-w-0 items-center gap-1.5 sm:gap-2 md:gap-2.5 lg:gap-3">
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-zinc-950 via-zinc-800 to-amber-500 text-white shadow-lg shadow-amber-200/40 sm:h-9 sm:w-9 lg:h-10 lg:w-10">
               <Sparkles className="h-4 w-4" />
             </div>
             <div className="min-w-0">
-              <div className="truncate text-[9px] uppercase tracking-[0.24em] text-amber-700/75 md:text-[9px] md:tracking-[0.28em] lg:text-[10px] lg:tracking-[0.32em]">
+              <div className="hidden truncate text-[9px] uppercase tracking-[0.24em] text-amber-700/75 sm:block md:tracking-[0.28em] lg:text-[10px] lg:tracking-[0.32em]">
                 Liburan impian
               </div>
-              <div className="truncate text-xs font-semibold tracking-[-0.03em] text-zinc-950 md:text-sm lg:text-base">
+              <div className="truncate text-[11px] font-semibold tracking-[-0.03em] text-zinc-950 sm:text-xs md:text-sm lg:text-base">
                 Buana Tour & Travel
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function Header({ locale }: { locale: Locale }) {
             <button
               type="button"
               onClick={() => setIsMenuOpen((value) => !value)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-amber-200/70 bg-white/80 text-zinc-800 lg:hidden"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-amber-200/70 bg-white/80 text-zinc-800 sm:h-10 sm:w-10 lg:hidden"
               aria-label={isMenuOpen ? "Close navigation" : "Open navigation"}
               aria-expanded={isMenuOpen}
             >

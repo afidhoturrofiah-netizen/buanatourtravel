@@ -9,9 +9,9 @@ export default async function UserRegisterPage({
   const isId = locale === "id";
 
   return (
-    <div className="luxury-shell py-16 md:py-24">
+    <div className="luxury-shell pb-24 pt-8 sm:py-16 md:pb-24 md:py-24">
       <div className="mx-auto max-w-lg luxury-card overflow-hidden">
-        <div className="bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,244,237,0.95))] p-8 md:p-10">
+        <div className="bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(248,244,237,0.95))] p-5 sm:p-8 md:p-10">
           <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">
             {isId ? "Create Account" : "Create Account"}
           </div>

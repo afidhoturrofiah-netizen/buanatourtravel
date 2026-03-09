@@ -42,7 +42,7 @@ export default async function AboutPage({
   ];
 
   return (
-    <div className="pb-10">
+    <div className="pb-24 md:pb-10">
       <PageHero
         eyebrow={isId ? "Tentang Kami" : "About Us"}
         title={isId ? "Buana Tour & Travel hadir untuk perjalanan yang lebih berkesan" : "Buana Tour & Travel is here for more memorable journeys"}

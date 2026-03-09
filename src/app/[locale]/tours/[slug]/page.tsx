@@ -22,7 +22,7 @@ export default async function TourDetailPage({
   const highlights = isId ? tour.highlights.id : tour.highlights.en;
 
   return (
-    <div className="pb-10">
+    <div className="pb-24 md:pb-10">
       <PageHero
         eyebrow={isId ? "Detail Paket" : "Package Detail"}
         title={isId ? tour.title.id : tour.title.en}

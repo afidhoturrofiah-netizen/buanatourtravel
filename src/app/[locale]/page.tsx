@@ -100,10 +100,10 @@ export default async function HomePage({
     },
   ];
   return (
-    <div className="pb-6">
+    <div className="pb-24 md:pb-6">
       <section className="relative overflow-hidden px-3 pt-3 md:px-6 md:pt-6">
         <div className="luxury-shell">
-          <div className="relative overflow-hidden rounded-[28px] bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.22),transparent_18%),linear-gradient(135deg,#081224_0%,#0f2a58_52%,#6f5514_100%)] px-4 py-5 text-white shadow-[0_30px_120px_rgba(15,23,42,0.18)] md:rounded-[36px] md:px-8 md:py-8 xl:min-h-[calc(100vh-8.75rem)] xl:max-h-[700px] xl:px-8 xl:py-6">
+          <div className="relative overflow-hidden rounded-[22px] bg-[radial-gradient(circle_at_top_right,rgba(245,158,11,0.22),transparent_18%),linear-gradient(135deg,#081224_0%,#0f2a58_52%,#6f5514_100%)] px-4 py-5 text-white shadow-[0_30px_120px_rgba(15,23,42,0.18)] sm:rounded-[28px] md:rounded-[36px] md:px-8 md:py-8 xl:min-h-[calc(100vh-8.75rem)] xl:max-h-[700px] xl:px-8 xl:py-6">
             <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.03),transparent_32%,rgba(255,255,255,0.015))]" />
             <div className="absolute -left-16 top-16 h-56 w-56 rounded-full bg-amber-300/10 blur-3xl" />
             <div className="absolute -right-10 bottom-0 h-64 w-64 rounded-full bg-sky-400/10 blur-3xl" />
@@ -115,11 +115,11 @@ export default async function HomePage({
                   Liburan impian, nyata bersama kami
                 </div>
 
-                <h1 className="mt-4 max-w-2xl text-[2rem] font-semibold leading-[1.02] tracking-[-0.05em] md:mt-4 md:text-[3.75rem] md:leading-[0.98] xl:max-w-lg xl:text-[3.35rem]">
+                <h1 className="mt-4 max-w-2xl text-[1.6rem] font-semibold leading-[1.08] tracking-[-0.05em] sm:text-[2rem] sm:leading-[1.02] md:mt-4 md:text-[3.75rem] md:leading-[0.98] xl:max-w-lg xl:text-[3.35rem]">
                   {t("heroTitle")}
                 </h1>
 
-                <p className="mt-3 max-w-xl text-sm leading-6 text-white/78 md:mt-3 md:max-w-lg md:text-base md:leading-7 xl:max-w-md">
+                <p className="mt-3 max-w-xl text-[13px] leading-[1.6] text-white/78 sm:text-sm sm:leading-6 md:mt-3 md:max-w-lg md:text-base md:leading-7 xl:max-w-md">
                   {t("heroSubtitle")}
                 </p>
 
@@ -143,15 +143,15 @@ export default async function HomePage({
                   </form>
                 </div>
 
-                <div className="mt-4 grid max-w-xl grid-cols-1 gap-2.5 sm:grid-cols-3 md:mt-5 md:gap-3 xl:mt-4">
+                <div className="mt-4 grid max-w-xl grid-cols-3 gap-2 md:mt-5 md:gap-3 xl:mt-4">
                   {[
                     { value: "120+", label: locale === "id" ? "Paket Tour" : "Tour Packages" },
                     { value: "25", label: locale === "id" ? "Destinasi" : "Destinations" },
                     { value: "4.9/5", label: locale === "id" ? "Rating Pelanggan" : "Client Rating" },
                   ].map((item) => (
-                    <div key={item.label} className="rounded-[20px] border border-white/10 bg-white/8 px-4 py-3.5 backdrop-blur-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_4px_16px_rgba(0,0,0,0.08)] transition hover:bg-white/12 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_6px_20px_rgba(0,0,0,0.12)] md:rounded-[22px] md:px-3.5 md:py-3.5">
-                      <div className="text-lg font-semibold text-white md:text-xl">{item.value}</div>
-                      <div className="mt-1 text-[10px] uppercase tracking-[0.16em] text-white/60 md:text-[11px] md:tracking-[0.22em]">
+                    <div key={item.label} className="rounded-[16px] border border-white/10 bg-white/8 px-2.5 py-2.5 backdrop-blur-sm shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_4px_16px_rgba(0,0,0,0.08)] transition hover:bg-white/12 sm:rounded-[20px] sm:px-4 sm:py-3.5 md:rounded-[22px] md:px-3.5 md:py-3.5">
+                      <div className="text-base font-semibold text-white sm:text-lg md:text-xl">{item.value}</div>
+                      <div className="mt-0.5 text-[9px] uppercase tracking-[0.12em] text-white/60 sm:mt-1 sm:text-[10px] sm:tracking-[0.16em] md:text-[11px] md:tracking-[0.22em]">
                         {item.label}
                       </div>
                     </div>
@@ -159,7 +159,7 @@ export default async function HomePage({
                 </div>
               </div>
 
-              <div className="relative xl:self-center">
+              <div className="relative hidden lg:block xl:self-center">
                 <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(243,239,232,0.95))] p-4 text-zinc-950 shadow-[0_24px_80px_rgba(8,18,36,0.18),inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-sm transition hover:shadow-[0_28px_100px_rgba(8,18,36,0.22),inset_0_1px_0_rgba(255,255,255,0.7)] hover:-translate-y-1 md:rounded-[28px] md:p-5 xl:p-4">
                   <div className="flex items-start justify-between gap-4">
                     <div>
@@ -215,7 +215,7 @@ export default async function HomePage({
             </div>
           </ScrollReveal>
 
-          <div className="grid gap-4 md:grid-cols-3 md:gap-5">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5">
             {featuredTours.map((tour, index) => (
               <ScrollReveal key={tour.title} direction="up" delay={200 + index * 100}>
                 <div
@@ -296,7 +296,7 @@ export default async function HomePage({
             </div>
           </ScrollReveal>
 
-          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
             {testimonials.map((item, index) => (
               <ScrollReveal key={item.name} direction="up" delay={420 + index * 90} className="flex">
                 <div className="luxury-card luxury-border flex h-full flex-col p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(15,23,42,0.08)] hover:border-amber-200/60">
