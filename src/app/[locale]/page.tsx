@@ -160,38 +160,38 @@ export default async function HomePage({
               </div>
 
               <div className="relative xl:self-center">
-                <div className="rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(243,239,232,0.95))] p-4 text-zinc-950 shadow-[0_24px_80px_rgba(8,18,36,0.18),inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-sm transition hover:shadow-[0_28px_100px_rgba(8,18,36,0.22),inset_0_1px_0_rgba(255,255,255,0.7)] hover:-translate-y-1 md:rounded-[28px] md:p-5 xl:p-4">
+                <div className="overflow-hidden rounded-[24px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(243,239,232,0.95))] p-4 text-zinc-950 shadow-[0_24px_80px_rgba(8,18,36,0.18),inset_0_1px_0_rgba(255,255,255,0.6)] backdrop-blur-sm transition hover:shadow-[0_28px_100px_rgba(8,18,36,0.22),inset_0_1px_0_rgba(255,255,255,0.7)] hover:-translate-y-1 md:rounded-[28px] md:p-5 xl:p-4">
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <div className="text-[10px] uppercase tracking-[0.32em] text-amber-700/80">Signature Pick</div>
-                      <div className="mt-2 text-xl font-semibold tracking-[-0.04em] text-zinc-950 md:text-[1.85rem] md:leading-[1.05] xl:text-[1.75rem]">{signatureTour ? (locale === "id" ? signatureTour.title.id : signatureTour.title.en) : "Swiss Alps Panorama"}</div>
+                      <div className="mt-2 text-xl font-semibold tracking-[-0.04em] text-zinc-950 md:text-2xl md:leading-[1.1] xl:text-[1.55rem]">{signatureTour ? (locale === "id" ? signatureTour.title.id : signatureTour.title.en) : "Swiss Alps Panorama"}</div>
                     </div>
-                    <div className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-[11px] text-zinc-500 shadow-sm">
+                    <div className="shrink-0 rounded-full border border-zinc-200 bg-white px-2.5 py-1 text-[10px] text-zinc-500 shadow-sm">
                       Limited Seats
                     </div>
                   </div>
 
-                  <div className="mt-4 rounded-[22px] border border-zinc-200 bg-white/95 px-4 py-4 shadow-[0_10px_35px_rgba(15,23,42,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] backdrop-blur-sm transition hover:bg-white hover:shadow-[0_12px_40px_rgba(15,23,42,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] md:mt-5 md:rounded-[24px] md:px-4 md:py-4 xl:mt-4 xl:px-4 xl:py-3.5">
-                    <div className="flex items-center gap-2 text-sm text-zinc-500">
-                      <MapPin className="h-4 w-4 text-amber-600" />
-                      {signatureTour ? (locale === "id" ? signatureTour.destination.id : signatureTour.destination.en) : "Lucerne · Interlaken · Zermatt"}
+                  <div className="mt-3 rounded-[18px] border border-zinc-200 bg-white/95 px-3.5 py-3 shadow-[0_10px_35px_rgba(15,23,42,0.06),inset_0_1px_0_rgba(255,255,255,0.8)] backdrop-blur-sm transition hover:bg-white hover:shadow-[0_12px_40px_rgba(15,23,42,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] md:mt-4 md:rounded-[20px] xl:mt-3">
+                    <div className="flex items-center gap-2 text-[13px] text-zinc-500">
+                      <MapPin className="h-3.5 w-3.5 text-amber-600" />
+                      <span className="line-clamp-1">{signatureTour ? (locale === "id" ? signatureTour.destination.id : signatureTour.destination.en) : "Lucerne · Interlaken · Zermatt"}</span>
                     </div>
-                    <div className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-zinc-950 md:mt-4 md:text-[2.2rem] xl:text-[1.95rem]">{signatureTour?.price || "IDR 42.800.000"}</div>
-                    <div className="mt-2 text-sm leading-6 text-zinc-600 md:text-[13px] md:leading-6">{(() => { const text = signatureTour ? (locale === "id" ? signatureTour.summary.id : signatureTour.summary.en) : "9D7N dengan scenic train, premium stay, dan highlight terbaik untuk traveler premium."; const words = text.split(/\s+/); return words.length > 25 ? words.slice(0, 25).join(" ") + "…" : text; })()}</div>
+                    <div className="mt-2 text-2xl font-semibold tracking-[-0.05em] text-zinc-950 md:text-[1.75rem] xl:text-[1.6rem]">{signatureTour?.price || "IDR 42.800.000"}</div>
+                    <div className="mt-1.5 line-clamp-3 text-[13px] leading-[1.45] text-zinc-600">{(() => { const text = signatureTour ? (locale === "id" ? signatureTour.summary.id : signatureTour.summary.en) : "9D7N dengan scenic train, premium stay, dan highlight terbaik untuk traveler premium."; const words = text.split(/\s+/); return words.length > 20 ? words.slice(0, 20).join(" ") + "…" : text; })()}</div>
                   </div>
 
-                  <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 md:mt-4 md:gap-2.5 xl:gap-2">
-                    <div className="rounded-2xl bg-zinc-950/95 px-4 py-4 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_4px_16px_rgba(0,0,0,0.3)] backdrop-blur-sm transition hover:bg-zinc-950 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_6px_20px_rgba(0,0,0,0.4)]">
-                      <div className="text-[10px] uppercase tracking-[0.28em] text-white/50">Duration</div>
-                      <div className="mt-2 text-lg font-semibold">{signatureTour?.duration || "9D7N"}</div>
+                  <div className="mt-2.5 grid grid-cols-2 gap-2 xl:mt-2">
+                    <div className="rounded-xl bg-zinc-950/95 px-3.5 py-3 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_4px_16px_rgba(0,0,0,0.3)] backdrop-blur-sm">
+                      <div className="text-[9px] uppercase tracking-[0.28em] text-white/50">Duration</div>
+                      <div className="mt-1 text-base font-semibold">{signatureTour?.duration || "9D7N"}</div>
                     </div>
-                    <div className="rounded-2xl bg-amber-50/95 px-4 py-4 text-zinc-900 ring-1 ring-amber-100/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_4px_16px_rgba(245,158,11,0.08)] backdrop-blur-sm transition hover:bg-amber-50 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_6px_20px_rgba(245,158,11,0.12)]">
-                      <div className="text-[10px] uppercase tracking-[0.28em] text-amber-700/70">Service</div>
-                      <div className="mt-2 text-lg font-semibold">{signatureTour ? (locale === "id" ? signatureTour.category.id : signatureTour.category.en) : "Elite Care"}</div>
+                    <div className="rounded-xl bg-amber-50/95 px-3.5 py-3 text-zinc-900 ring-1 ring-amber-100/80 shadow-[inset_0_1px_0_rgba(255,255,255,0.5),0_4px_16px_rgba(245,158,11,0.08)] backdrop-blur-sm">
+                      <div className="text-[9px] uppercase tracking-[0.28em] text-amber-700/70">Service</div>
+                      <div className="mt-1 text-base font-semibold">{signatureTour ? (locale === "id" ? signatureTour.category.id : signatureTour.category.en) : "Elite Care"}</div>
                     </div>
                   </div>
 
-                  <div className="mt-3 rounded-2xl border border-amber-200/70 bg-amber-50/95 px-4 py-3 text-sm text-amber-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_4px_16px_rgba(245,158,11,0.06)] backdrop-blur-sm transition hover:bg-amber-50/100 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_6px_20px_rgba(245,158,11,0.1)] xl:mt-2 xl:text-[13px]">
+                  <div className="mt-2 rounded-xl border border-amber-200/70 bg-amber-50/95 px-3.5 py-2.5 text-[12px] leading-[1.4] text-amber-900 xl:text-[11px]">
                     Private consultation available for family, honeymoon, and group departures.
                   </div>
                 </div>
