@@ -251,13 +251,13 @@ export default async function HomePage({
             const Icon = item.icon;
 
             return (
-              <ScrollReveal key={item.title} direction="up" delay={300 + index * 100}>
-                <div className="luxury-card p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] hover:border-amber-200/60">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-50 text-amber-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_4px_16px_rgba(245,158,11,0.08)] transition-all duration-300 group-hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.8),0_6px_20px_rgba(245,158,11,0.12)] group-hover:scale-105">
+              <ScrollReveal key={item.title} direction="up" delay={300 + index * 100} className="flex">
+                <div className="luxury-card flex h-full flex-col p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)] hover:border-amber-200/60">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-50 text-amber-700 shadow-[inset_0_1px_0_rgba(255,255,255,0.6),0_4px_16px_rgba(245,158,11,0.08)]">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="mt-5 text-xl font-semibold tracking-[-0.03em] text-zinc-950">{item.title}</div>
-                  <p className="mt-3 text-sm leading-7 text-zinc-600">{item.copy}</p>
+                  <p className="mt-3 flex-1 text-sm leading-7 text-zinc-600">{item.copy}</p>
                 </div>
               </ScrollReveal>
             );
@@ -298,8 +298,8 @@ export default async function HomePage({
 
           <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
             {testimonials.map((item, index) => (
-              <ScrollReveal key={item.name} direction="up" delay={420 + index * 90}>
-                <div className="luxury-card luxury-border h-full p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(15,23,42,0.08)] hover:border-amber-200/60">
+              <ScrollReveal key={item.name} direction="up" delay={420 + index * 90} className="flex">
+                <div className="luxury-card luxury-border flex h-full flex-col p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_22px_70px_rgba(15,23,42,0.08)] hover:border-amber-200/60">
                   <div className="inline-flex rounded-full bg-amber-50 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-amber-700">
                     {item.label}
                   </div>
@@ -308,7 +308,7 @@ export default async function HomePage({
                       <Stars key={`${item.name}-${starIndex}`} className="h-4 w-4" />
                     ))}
                   </div>
-                  <p className="mt-4 text-sm leading-7 text-zinc-600">
+                  <p className="mt-4 flex-1 text-sm leading-7 text-zinc-600">
                     “{item.quote}”
                   </p>
                   <div className="mt-6 border-t border-zinc-200/80 pt-4">

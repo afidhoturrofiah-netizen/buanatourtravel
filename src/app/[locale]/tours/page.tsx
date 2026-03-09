@@ -142,9 +142,9 @@ export default async function ToursPage({
   return (
     <div className="pb-10">
       <PageHero
-        eyebrow={isId ? "Koleksi Paket Premium" : "Premium Tour Collection"}
-        title={isId ? "Pilih paket tour yang tampil mewah dan mudah dijual" : "Choose elevated tour packages with premium appeal"}
-        description={isId ? "Semua paket disusun untuk menampilkan value yang jelas: destinasi, durasi, kenyamanan, dan daya tarik visual yang kuat." : "Each package is presented with strong value clarity: destination, duration, comfort, and modern premium positioning."}
+        eyebrow={isId ? "Paket Tour" : "Tour Packages"}
+        title={isId ? "Temukan paket tour terbaik untuk perjalanan Anda" : "Find the best tour packages for your journey"}
+        description={isId ? "Jelajahi koleksi paket wisata kami ke berbagai destinasi domestik dan internasional dengan itinerary terkurasi dan harga terbaik." : "Explore our curated tour packages to various domestic and international destinations with the best prices."}
       />
 
       <section className="luxury-shell py-12 md:py-14 xl:py-16">
@@ -247,8 +247,8 @@ export default async function ToursPage({
             />
           ) : null}
           {sortedTours.map((tour, index) => (
-            <ScrollReveal key={tour.slug} direction="up" delay={index * 100}>
-              <div className="luxury-card luxury-border group overflow-hidden p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_26px_90px_rgba(15,23,42,0.11)] hover:border-amber-200/60 xl:p-6">
+            <ScrollReveal key={tour.slug} direction="up" delay={index * 100} className="flex">
+              <div className="luxury-card luxury-border group flex h-full flex-col overflow-hidden p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_26px_90px_rgba(15,23,42,0.11)] hover:border-amber-200/60 xl:p-6">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-zinc-100 shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)]">
                   <Image
                     src={tour.image}
@@ -274,7 +274,7 @@ export default async function ToursPage({
                   {isId ? tour.destination.id : tour.destination.en}
                 </div>
 
-                <p className="mt-4 text-sm leading-7 text-zinc-600">
+                <p className="mt-4 flex-1 text-sm leading-7 text-zinc-600">
                   {(() => { const text = isId ? tour.summary.id : tour.summary.en; const words = text.split(/\s+/); return words.length > 25 ? words.slice(0, 25).join(" ") + "…" : text; })()}
                 </p>
 

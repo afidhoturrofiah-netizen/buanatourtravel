@@ -21,9 +21,9 @@ export default async function BlogPage({
   return (
     <div className="pb-10">
       <PageHero
-        eyebrow={isId ? "Travel Journal" : "Travel Journal"}
-        title={isId ? "Konten travel yang memberi inspirasi dan membangun trust" : "Travel content that inspires and builds trust"}
-        description={isId ? "Halaman blog dirancang untuk memperkuat brand Buana Tour & Travel melalui tips, insight, dan artikel destinasi yang enak dibaca." : "The blog is designed to strengthen Buana Tour & Travel through travel tips, destination insight, and polished editorial presentation."}
+        eyebrow={isId ? "Blog Perjalanan" : "Travel Journal"}
+        title={isId ? "Tips destinasi, cerita perjalanan, dan inspirasi liburan" : "Destination tips, travel stories, and holiday inspiration"}
+        description={isId ? "Baca artikel terbaru seputar destinasi, tips perjalanan, dan rekomendasi paket tour dari tim Buana Tour & Travel." : "Read the latest articles about destinations, travel tips, and tour package recommendations from the Buana Tour & Travel team."}
       />
 
       <section className="luxury-shell py-12 md:py-14 xl:py-16">
@@ -41,8 +41,8 @@ export default async function BlogPage({
             />
           ) : null}
           {blogs.map((post, index) => (
-            <ScrollReveal key={post.slug} direction="up" delay={index * 100}>
-              <article className="luxury-card luxury-border group overflow-hidden p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_26px_90px_rgba(15,23,42,0.11)] hover:border-amber-200/60 xl:p-6">
+            <ScrollReveal key={post.slug} direction="up" delay={index * 100} className="flex">
+              <article className="luxury-card luxury-border group flex h-full flex-col overflow-hidden p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_26px_90px_rgba(15,23,42,0.11)] hover:border-amber-200/60 xl:p-6">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-zinc-100 shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)]">
                   <Image
                     src={post.image}
@@ -63,7 +63,7 @@ export default async function BlogPage({
                   {isId ? post.title.id : post.title.en}
                 </div>
 
-                <p className="mt-4 text-sm leading-7 text-zinc-600">
+                <p className="mt-4 flex-1 text-sm leading-7 text-zinc-600">
                   {(() => { const text = isId ? post.excerpt.id : post.excerpt.en; const words = text.split(/\s+/); return words.length > 25 ? words.slice(0, 25).join(" ") + "…" : text; })()}
                 </p>
 

@@ -70,12 +70,12 @@ export default async function AboutPage({
               const Icon = value.icon;
 
               return (
-                <div key={value.title} className="luxury-card p-6">
+                <div key={value.title} className="luxury-card flex h-full flex-col p-6">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-100 to-yellow-50 text-amber-700">
                     <Icon className="h-5 w-5" />
                   </div>
                   <div className="mt-5 text-xl font-semibold tracking-[-0.03em] text-zinc-950">{value.title}</div>
-                  <p className="mt-3 text-sm leading-7 text-zinc-600">{value.copy}</p>
+                  <p className="mt-3 flex-1 text-sm leading-7 text-zinc-600">{value.copy}</p>
                 </div>
               );
             })}
