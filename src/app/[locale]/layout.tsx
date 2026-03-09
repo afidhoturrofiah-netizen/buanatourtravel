@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 
 import { defaultLocale, isLocale, type Locale } from "@/i18n/routing";
-import ChatBubble from "@/components/shared/ChatBubble";
 import MobileStickyCta from "@/components/shared/MobileStickyCta";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { getHomepageSettings } from "@/lib/cms-storage";
+
+const ChatBubble = dynamic(() => import("@/components/shared/ChatBubble"), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Buana Tour & Travel",
@@ -29,10 +32,7 @@ export default async function LocaleLayout({
 
   setRequestLocale(resolvedLocale);
 
-  const [messages, homepageSettings] = await Promise.all([
-    import(`@/i18n/messages/${resolvedLocale}.json`).then((module) => module.default),
-    getHomepageSettings(),
-  ]);
+  const messages = await import(`@/i18n/messages/${resolvedLocale}.json`).then((module) => module.default);
 
   return (
     <NextIntlClientProvider locale={resolvedLocale} messages={messages}>
@@ -41,7 +41,7 @@ export default async function LocaleLayout({
         <div className="flex-1">{children}</div>
         <Footer />
         <MobileStickyCta locale={resolvedLocale} />
-        <ChatBubble locale={resolvedLocale} faqItems={homepageSettings.faqItems} />
+        <ChatBubble locale={resolvedLocale} />
       </div>
     </NextIntlClientProvider>
   );

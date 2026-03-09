@@ -1,4 +1,5 @@
 import { list, put } from "@vercel/blob";
+import { cache } from "react";
 
 import { blogs, tours } from "@/data/site-content";
 import type { BlogRecord, CmsData, HomepageSettings, InquiryRecord, TourRecord } from "@/lib/cms-types";
@@ -304,6 +305,8 @@ export async function readCmsData(): Promise<CmsData> {
   return parsed;
 }
 
+export const getCachedCmsData = cache(readCmsData);
+
 export async function writeCmsData(data: CmsData) {
   const blob = await put(CMS_BLOB_PATH, JSON.stringify(data, null, 2), {
     access: "public",
@@ -315,27 +318,27 @@ export async function writeCmsData(data: CmsData) {
 }
 
 export async function getTours() {
-  const data = await readCmsData();
+  const data = await getCachedCmsData();
   return data.tours;
 }
 
 export async function getTourBySlug(slug: string) {
-  const data = await readCmsData();
+  const data = await getCachedCmsData();
   return data.tours.find((tour) => tour.slug === slug);
 }
 
 export async function getBlogs() {
-  const data = await readCmsData();
+  const data = await getCachedCmsData();
   return data.blogs;
 }
 
 export async function getBlogBySlug(slug: string) {
-  const data = await readCmsData();
+  const data = await getCachedCmsData();
   return data.blogs.find((post) => post.slug === slug);
 }
 
 export async function getInquiries() {
-  const data = await readCmsData();
+  const data = await getCachedCmsData();
   return data.inquiries.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
 }
 
@@ -364,7 +367,7 @@ export async function saveInquiries(inquiries: InquiryRecord[]) {
 }
 
 export async function getHomepageSettings(): Promise<HomepageSettings> {
-  const data = await readCmsData();
+  const data = await getCachedCmsData();
   return data.homepage;
 }
 

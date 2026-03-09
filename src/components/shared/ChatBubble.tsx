@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { MessageCircle, Send, Sparkles, X } from "lucide-react";
 
@@ -57,9 +57,10 @@ function getReply(input: string, locale: Locale, faqItems: FaqItem[]) {
   };
 }
 
-export default function ChatBubble({ locale, faqItems }: { locale: Locale; faqItems: FaqItem[] }) {
+export default function ChatBubble({ locale }: { locale: Locale }) {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState("");
+  const [faqItems, setFaqItems] = useState<FaqItem[]>([]);
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       id: "welcome",
@@ -75,6 +76,29 @@ export default function ChatBubble({ locale, faqItems }: { locale: Locale; faqIt
     () => buildWhatsappLink(locale === "id" ? "Halo admin, saya ingin dibantu soal paket tour." : "Hello admin, I need help with a tour package."),
     [locale]
   );
+
+  useEffect(() => {
+    if (!isOpen || faqItems.length > 0) return;
+
+    let isMounted = true;
+
+    fetch("/api/chat-faq")
+      .then((response) => response.json())
+      .then((data) => {
+        if (isMounted) {
+          setFaqItems(Array.isArray(data?.faqItems) ? data.faqItems : []);
+        }
+      })
+      .catch(() => {
+        if (isMounted) {
+          setFaqItems([]);
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [isOpen, faqItems.length]);
 
   function handleSend() {
     const trimmed = input.trim();
