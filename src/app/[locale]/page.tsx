@@ -8,7 +8,7 @@ import { defaultLocale, type Locale } from "@/i18n/routing";
 import { getHomepageSettings, getTours } from "@/lib/cms-storage";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function HomePage({
   params,
@@ -58,7 +58,8 @@ export default async function HomePage({
       destination: locale === "id" ? "Dokumentasi keberangkatan" : "Departure documentation",
     },
   ];
-  const marqueeRows = [marqueePhotos, [...marqueePhotos].reverse()];
+  const limitedPhotos = marqueePhotos.slice(0, 8);
+  const marqueeRows = [limitedPhotos, [...limitedPhotos].reverse()];
   const featuredTours = fallbackTourRecords.slice(0, 3).map((tour) => ({
     title: locale === "id" ? tour.title.id : tour.title.en,
     region: locale === "id" ? tour.destination.id : tour.destination.en,
@@ -359,6 +360,7 @@ export default async function HomePage({
                           src={photo.src}
                           alt={photo.title}
                           fill
+                          loading="lazy"
                           sizes="(max-width: 768px) 290px, 340px"
                           className="object-cover transition duration-700 group-hover:scale-105"
                         />

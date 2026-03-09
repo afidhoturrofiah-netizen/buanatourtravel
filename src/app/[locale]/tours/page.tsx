@@ -8,7 +8,7 @@ import { getTours } from "@/lib/cms-storage";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import CollapsibleFilter from "@/components/shared/CollapsibleFilter";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 function parsePriceToNumber(price: string) {
   const numeric = Number(price.replace(/[^\d]/g, ""));
@@ -238,6 +238,8 @@ export default async function ToursPage({
                     src={tour.image}
                     alt={isId ? tour.title.id : tour.title.en}
                     fill
+                    loading="lazy"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                   />
                 </div>

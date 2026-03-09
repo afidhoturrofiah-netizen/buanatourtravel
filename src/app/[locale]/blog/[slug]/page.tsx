@@ -5,7 +5,7 @@ import { BookOpenText, CalendarDays, Tag } from "lucide-react";
 import PageHero from "@/components/shared/PageHero";
 import { getBlogBySlug } from "@/lib/cms-storage";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function BlogDetailPage({
   params,
@@ -36,6 +36,8 @@ export default async function BlogDetailPage({
                 src={post.image}
                 alt={isId ? post.title.id : post.title.en}
                 fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 60vw"
                 className="object-cover"
               />
             </div>

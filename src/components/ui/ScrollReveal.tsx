@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -24,7 +24,6 @@ export default function ScrollReveal({
   as: Component = "div",
   ...props
 }: ScrollRevealProps) {
-  const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,10 +45,17 @@ export default function ScrollReveal({
       }
     };
 
+    // Set initial hidden state
+    element.style.opacity = "0";
+    element.style.transform = getInitialTransform();
+    element.style.transition = `opacity ${duration}ms ${easing} ${delay}ms, transform ${duration}ms ${easing} ${delay}ms`;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          entry.target.setAttribute("style",
+            `opacity:1;transform:translate(0,0);transition:opacity ${duration}ms ${easing} ${delay}ms,transform ${duration}ms ${easing} ${delay}ms`
+          );
           observer.unobserve(entry.target);
         }
       },
@@ -59,27 +65,12 @@ export default function ScrollReveal({
       }
     );
 
-    // Set initial state
-    element.style.opacity = "0";
-    element.style.transform = getInitialTransform();
-    element.style.transition = `opacity ${duration}ms ${easing} ${delay}ms, transform ${duration}ms ${easing} ${delay}ms`;
-
     observer.observe(element);
 
     return () => {
       observer.unobserve(element);
     };
   }, [direction, distance, duration, easing, delay]);
-
-  useEffect(() => {
-    const element = ref.current;
-    if (!element) return;
-
-    if (isVisible) {
-      element.style.opacity = "1";
-      element.style.transform = "translate(0, 0)";
-    }
-  }, [isVisible, direction, distance]);
 
   return (
     <Component ref={ref} className={className} {...props}>

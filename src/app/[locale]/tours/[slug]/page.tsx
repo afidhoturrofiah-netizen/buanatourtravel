@@ -6,7 +6,7 @@ import PageHero from "@/components/shared/PageHero";
 import InquiryForm from "@/components/shared/InquiryForm";
 import { getTourBySlug } from "@/lib/cms-storage";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function TourDetailPage({
   params,
@@ -38,6 +38,8 @@ export default async function TourDetailPage({
                   src={tour.image}
                   alt={isId ? tour.title.id : tour.title.en}
                   fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 55vw"
                   className="object-cover"
                 />
               </div>

@@ -7,7 +7,7 @@ import PageHero from "@/components/shared/PageHero";
 import { getBlogs } from "@/lib/cms-storage";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 export default async function BlogPage({
   params,
@@ -48,6 +48,8 @@ export default async function BlogPage({
                     src={post.image}
                     alt={isId ? post.title.id : post.title.en}
                     fill
+                    loading="lazy"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
                   />
                 </div>
