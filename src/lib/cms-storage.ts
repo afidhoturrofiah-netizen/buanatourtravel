@@ -231,7 +231,10 @@ async function resolveBlobUrl(): Promise<string | null> {
   if (latestBlobUrl) return latestBlobUrl;
   try {
     const { blobs } = await list({ prefix: CMS_BLOB_PATH, limit: 1 });
-    if (blobs.length > 0) return blobs[0].url;
+    if (blobs.length > 0) {
+      latestBlobUrl = blobs[0].url;
+      return latestBlobUrl;
+    }
     return null;
   } catch {
     return null;
@@ -292,12 +295,6 @@ export async function readCmsData(): Promise<CmsData> {
       customLink: item.customLink || "",
     }));
     needsWrite = true;
-  }
-
-  if (parsed.tours.length === 0 && parsed.blogs.length === 0 && parsed.inquiries.length === 0) {
-    const seed = buildSeedData();
-    await writeCmsData(seed);
-    return seed;
   }
 
   if (needsWrite) {
