@@ -77,14 +77,24 @@ export default function ImageCropUpload({ name, existingImage, aspect = 4 / 3, l
       setCroppedPreview(previewUrl);
       setIsCropping(false);
 
+      // Create file with proper name and type
+      const file = new File([blob], originalFileName.current, { 
+        type: "image/jpeg",
+        lastModified: Date.now()
+      });
+      
+      // Use DataTransfer to set files on hidden input
       const dt = new DataTransfer();
-      const file = new File([blob], originalFileName.current, { type: "image/jpeg" });
       dt.items.add(file);
+      
       if (hiddenInputRef.current) {
         hiddenInputRef.current.files = dt.files;
+        // Trigger change event to ensure form recognizes the file
+        const event = new Event('change', { bubbles: true });
+        hiddenInputRef.current.dispatchEvent(event);
       }
-    } catch {
-      // silently fail
+    } catch (error) {
+      console.error('Crop failed:', error);
     }
   };
 

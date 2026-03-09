@@ -42,19 +42,29 @@ function getLines(formData: FormData, key: string) {
 }
 
 async function saveUpload(file: File | null, prefix: string) {
+  console.log('saveUpload called:', { 
+    hasFile: !!file, 
+    fileSize: file?.size, 
+    fileName: file?.name,
+    fileType: file?.type 
+  });
+  
   if (!file || file.size === 0) {
+    console.log('No file or empty file, returning empty string');
     return "";
   }
 
   const extension = file.name.includes(".") ? file.name.split(".").pop() : "jpg";
   const filename = `uploads/${prefix}-${Date.now()}.${extension}`;
 
+  console.log('Uploading to blob:', filename);
   const blob = await put(filename, file, {
     access: "public",
     addRandomSuffix: false,
     allowOverwrite: true,
   });
 
+  console.log('Upload successful:', blob.url);
   return blob.url;
 }
 
