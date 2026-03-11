@@ -1,0 +1,11 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow admin pages from being indexed
+Disallow: /*/admin/
+Disallow: /*/login
+Disallow: /*/register
+
+# Sitemap location
+Sitemap: https://buanatourtravel-2rya-7gb4t5f1a-irvans-projects-e50e03e6.vercel.app/sitemap.xml

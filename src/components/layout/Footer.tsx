@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Footer() {
   const t = useTranslations("footer");
@@ -9,12 +10,24 @@ export default function Footer() {
         <div className="luxury-card overflow-hidden">
           <div className="grid gap-8 px-4 py-8 sm:px-6 sm:py-10 md:grid-cols-[1.3fr_0.7fr_0.7fr] md:gap-10 md:px-10">
             <div>
-              <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">
-                Liburan impian, nyata bersama kami
+              <div className="flex items-center gap-3 mb-3">
+                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full">
+                  <Image
+                    src="/logo.png"
+                    alt="Buana Tour & Travel Logo"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <div className="text-[11px] uppercase tracking-[0.35em] text-amber-700/80">
+                    Liburan impian
+                  </div>
+                  <h3 className="text-lg font-semibold tracking-[-0.03em] text-zinc-950">
+                    Buana Tour & Travel
+                  </h3>
+                </div>
               </div>
-              <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-zinc-950">
-                Buana Tour & Travel
-              </h3>
               <p className="mt-4 max-w-md text-sm leading-7 text-zinc-600">{t("tagline")}</p>
             </div>
 

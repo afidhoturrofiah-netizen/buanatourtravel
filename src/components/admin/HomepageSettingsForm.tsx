@@ -1,5 +1,8 @@
+"use client";
+
 import { saveHomepageSettingsAction } from "@/app/actions/admin-actions";
 import AdminActionButton from "@/components/admin/AdminActionButton";
+import ImageCropUpload from "@/components/admin/ImageCropUpload";
 import type { HomepageSettings } from "@/lib/cms-types";
 
 export default function HomepageSettingsForm({
@@ -12,6 +15,21 @@ export default function HomepageSettingsForm({
   return (
     <form action={saveHomepageSettingsAction} className="space-y-6">
       <input type="hidden" name="locale" value={locale} />
+
+      <div className="rounded-3xl border border-zinc-200 bg-white p-5">
+        <div className="text-lg font-semibold tracking-[-0.03em] text-zinc-950">Gambar Hero Beranda</div>
+        <p className="mt-2 text-sm text-zinc-600">Upload gambar latar belakang untuk hero section di halaman beranda. Gunakan gambar landscape resolusi tinggi (min. 1920×800).</p>
+
+        <div className="mt-6">
+          <ImageCropUpload
+            name="hero_image"
+            existingImage={initialData.heroImage}
+            aspect={16 / 7}
+            label="Upload gambar hero beranda"
+          />
+          <input type="hidden" name="existing_hero_image" value={initialData.heroImage || ""} />
+        </div>
+      </div>
 
       <div className="rounded-3xl border border-zinc-200 bg-white p-5">
         <div className="text-lg font-semibold tracking-[-0.03em] text-zinc-950">Why Travelers Return</div>

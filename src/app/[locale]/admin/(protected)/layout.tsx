@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { Images, LayoutDashboard, LogOut, Map, MessageSquare, Newspaper, Settings2 } from "lucide-react";
+import { Database, Images, LayoutDashboard, LogOut, Map, MessageSquare, Newspaper, Settings2 } from "lucide-react";
 
 import { logoutAdminAction } from "@/app/actions/admin-actions";
 import type { Locale } from "@/i18n/routing";
@@ -53,6 +53,10 @@ export default async function ProtectedAdminLayout({
             <Link className="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-amber-50" href={`/${resolvedLocale}/admin/documentation`}>
               <Images className="h-4 w-4 text-amber-700" />
               Dokumentasi
+            </Link>
+            <Link className="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-amber-50" href={`/${resolvedLocale}/admin/database`}>
+              <Database className="h-4 w-4 text-amber-700" />
+              Database
             </Link>
           </nav>
 

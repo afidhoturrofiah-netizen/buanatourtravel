@@ -88,6 +88,7 @@ export type HomepageDocumentationItem = {
 };
 
 export type HomepageSettings = {
+  heroImage?: string;
   whySection: HomepageWhySection;
   topDestinations: HomepageDestinationItem[];
   faqItems: HomepageFaqItem[];

@@ -9,7 +9,7 @@ export default function MobileStickyCta({ locale }: { locale: Locale }) {
   const isId = locale === "id";
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/70 bg-white/92 px-2 pb-[calc(env(safe-area-inset-bottom)+0.5rem)] pt-2 shadow-[0_-16px_40px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:px-3 sm:pb-[calc(env(safe-area-inset-bottom)+0.75rem)] sm:pt-3 md:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-50 border-t border-zinc-200/60 bg-white/[0.97] px-2 pb-[calc(env(safe-area-inset-bottom)+0.5rem)] pt-2 shadow-[0_-4px_16px_rgba(15,23,42,0.05)] sm:px-3 sm:pb-[calc(env(safe-area-inset-bottom)+0.75rem)] sm:pt-3 md:hidden">
       <div className="mx-auto grid max-w-3xl grid-cols-3 gap-1.5 sm:gap-2">
         <Link
           href={whatsappHref}

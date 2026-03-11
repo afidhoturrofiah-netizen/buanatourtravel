@@ -128,11 +128,11 @@ export default function ChatBubble({ locale }: { locale: Locale }) {
         <>
           <button
             type="button"
-            className="fixed inset-0 z-[60] bg-zinc-950/25 backdrop-blur-[2px] md:hidden"
+            className="fixed inset-0 z-[60] bg-zinc-950/40 md:hidden"
             aria-label="Close chat overlay"
             onClick={() => setIsOpen(false)}
           />
-          <div className="fixed inset-x-3 bottom-[4.5rem] z-[61] mx-auto max-w-sm overflow-hidden rounded-[24px] border border-white/70 bg-white/95 shadow-[0_24px_80px_rgba(15,23,42,0.18)] backdrop-blur-xl sm:inset-x-auto sm:right-4 sm:bottom-20 md:right-6 md:bottom-6">
+          <div className="fixed inset-x-3 bottom-[4.5rem] z-[61] mx-auto max-w-sm overflow-hidden rounded-[24px] border border-white/70 bg-white shadow-[0_8px_32px_rgba(15,23,42,0.14)] sm:inset-x-auto sm:right-4 sm:bottom-20 md:right-6 md:bottom-6">
             <div className="bg-[linear-gradient(135deg,#111827_0%,#172554_48%,#6b4f12_100%)] px-4 py-3.5 text-white">
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-2.5">

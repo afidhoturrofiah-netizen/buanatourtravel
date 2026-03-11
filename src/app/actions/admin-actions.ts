@@ -5,8 +5,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 import { createAdminSession, destroyAdminSession } from "@/lib/auth";
-import { getBlogs, getHomepageSettings, getInquiries, getTours, saveBlogs, saveHomepageSettings, saveInquiries, saveInquiry, saveTours } from "@/lib/cms-storage";
-import type { BlogRecord, HomepageSettings, InquiryRecord, TourRecord } from "@/lib/cms-types";
+import { getBlogs, getHomepageSettings, getInquiries, getTours, readCmsData, saveBlogs, saveHomepageSettings, saveInquiries, saveInquiry, saveTours, writeCmsData } from "@/lib/cms-storage";
+import type { BlogRecord, CmsData, HomepageSettings, InquiryRecord, TourRecord } from "@/lib/cms-types";
 import { slugify } from "@/lib/slugify";
 
 function nowIso() {
@@ -227,8 +227,13 @@ export async function saveHomepageSettingsAction(formData: FormData) {
   const locale = getString(formData, "locale") || "id";
   const currentSettings = await getHomepageSettings();
 
+  const heroImageFile = formData.get("hero_image") instanceof File ? (formData.get("hero_image") as File) : null;
+  const existingHeroImage = getString(formData, "existing_hero_image");
+  const uploadedHeroImage = await saveUpload(heroImageFile, "hero");
+
   const nextSettings: HomepageSettings = {
     ...currentSettings,
+    heroImage: uploadedHeroImage || existingHeroImage || currentSettings.heroImage || "",
     whySection: {
       eyebrow: {
         id: getString(formData, "why_eyebrow_id"),

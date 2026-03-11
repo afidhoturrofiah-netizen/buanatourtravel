@@ -231,8 +231,8 @@ export default async function ToursPage({
             />
           ) : null}
           {sortedTours.map((tour, index) => (
-            <ScrollReveal key={tour.slug} direction="up" delay={index * 100} className="flex">
-              <div className="luxury-card luxury-border group flex h-full flex-col overflow-hidden p-5 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_26px_90px_rgba(15,23,42,0.11)] hover:border-amber-200/60 xl:p-6">
+            <ScrollReveal key={tour.slug} direction="up" delay={Math.min(index * 80, 400)} className="flex">
+              <div className="luxury-card luxury-border group flex h-full flex-col overflow-hidden p-5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(15,23,42,0.08)] hover:border-amber-200/60 xl:p-6">
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[24px] bg-zinc-100 shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)]">
                   <Image
                     src={tour.image}
@@ -244,7 +244,7 @@ export default async function ToursPage({
                   />
                 </div>
 
-                <div className="flex items-center justify-between">
+                <div className="mt-4 flex items-center justify-between">
                   <div className="rounded-full bg-amber-50 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.25em] text-amber-700">
                     {isId ? tour.category.id : tour.category.en}
                   </div>
@@ -264,7 +264,7 @@ export default async function ToursPage({
                   {(() => { const text = isId ? tour.summary.id : tour.summary.en; const words = text.split(/\s+/); return words.length > 25 ? words.slice(0, 25).join(" ") + "…" : text; })()}
                 </p>
 
-                <div className="mt-6 flex items-center justify-between rounded-2xl bg-zinc-950/95 px-4 py-3 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_4px_16px_rgba(0,0,0,0.3)] backdrop-blur-sm transition hover:bg-zinc-950 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_6px_20px_rgba(0,0,0,0.4)]">
+                <div className="mt-6 flex items-center justify-between rounded-2xl bg-zinc-950 px-4 py-3 text-white shadow-sm">
                   <div>
                     <div className="text-[11px] uppercase tracking-[0.25em] text-white/55">
                       {isId ? "Mulai dari" : "Starting from"}
