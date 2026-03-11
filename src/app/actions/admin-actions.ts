@@ -124,7 +124,7 @@ export async function saveTourAction(formData: FormData) {
 
   await saveTours(nextTours);
   revalidatePath("/", "layout");
-  redirect(`/${locale}/admin/tours?status=tour_saved`);
+  redirect(`/${locale}/admin/tours?status=tour_saved&t=${Date.now()}`);
 }
 
 export async function deleteTourAction(formData: FormData) {
@@ -134,7 +134,7 @@ export async function deleteTourAction(formData: FormData) {
 
   await saveTours(tours.filter((item) => item.id !== id));
   revalidatePath("/", "layout");
-  redirect(`/${locale}/admin/tours?status=tour_deleted`);
+  redirect(`/${locale}/admin/tours?status=tour_deleted&t=${Date.now()}`);
 }
 
 export async function saveBlogAction(formData: FormData) {
@@ -179,7 +179,7 @@ export async function saveBlogAction(formData: FormData) {
 
   await saveBlogs(nextBlogs);
   revalidatePath("/", "layout");
-  redirect(`/${locale}/admin/blog?status=blog_saved`);
+  redirect(`/${locale}/admin/blog?status=blog_saved&t=${Date.now()}`);
 }
 
 export async function deleteBlogAction(formData: FormData) {
@@ -189,7 +189,7 @@ export async function deleteBlogAction(formData: FormData) {
 
   await saveBlogs(blogs.filter((item) => item.id !== id));
   revalidatePath("/", "layout");
-  redirect(`/${locale}/admin/blog?status=blog_deleted`);
+  redirect(`/${locale}/admin/blog?status=blog_deleted&t=${Date.now()}`);
 }
 
 export async function submitInquiryAction(formData: FormData) {
@@ -220,7 +220,7 @@ export async function deleteInquiryAction(formData: FormData) {
 
   await saveInquiries(inquiries.filter((item) => item.id !== id));
   revalidatePath("/", "layout");
-  redirect(`/${locale}/admin/inquiries?status=inquiry_deleted`);
+  redirect(`/${locale}/admin/inquiries?status=inquiry_deleted&t=${Date.now()}`);
 }
 
 export async function saveHomepageSettingsAction(formData: FormData) {
@@ -283,7 +283,7 @@ export async function saveHomepageSettingsAction(formData: FormData) {
 
   await saveHomepageSettings(nextSettings);
   revalidatePath("/", "layout");
-  redirect(`/${locale}/admin/homepage?status=homepage_saved`);
+  redirect(`/${locale}/admin/homepage?status=homepage_saved&t=${Date.now()}`);
 }
 
 export async function saveHomepageDocumentationAction(formData: FormData) {
@@ -322,5 +322,5 @@ export async function saveHomepageDocumentationAction(formData: FormData) {
 
   await saveHomepageSettings(nextSettings);
   revalidatePath("/", "layout");
-  redirect(`/${locale}/admin/documentation?status=documentation_saved`);
+  redirect(`/${locale}/admin/documentation?status=documentation_saved&t=${Date.now()}`);
 }
